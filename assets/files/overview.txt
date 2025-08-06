@@ -1,0 +1,63 @@
+�� Project Overview
+ElectroMart is a complete multi-actor e-commerce system built with modern web technologies:
+Core Technologies Used:
+HTML5 - Semantic markup and modern structure
+CSS3 - Advanced styling with custom properties and animations
+JavaScript (ES6) - Modern JavaScript with modular architecture
+Bootstrap 5 - Responsive framework for UI components
+Font Awesome - Icon library for UI elements
+Key Features Implemented:
+🏠 Homepage (index.html)
+Hero section with call-to-action
+Featured categories (Smartphones, Laptops, Audio, Smart Home)
+Featured products display
+Responsive navigation with cart counter
+Newsletter subscription
+🛍️ Product Catalog (pages/catalog.html)
+Advanced filtering by category, price, and rating
+Search functionality
+Grid and list view modes
+Pagination system
+Sort options (name, price, rating)
+🛒 Shopping Cart (pages/cart.html)
+Add/remove items with quantity controls
+Coupon code system
+Shipping options selection
+Order summary with tax calculation
+Related products suggestions
+👤 User Authentication
+Login Page (pages/login.html) with demo accounts
+Registration Page (pages/register.html) with role selection
+Password strength validation
+Form validation and error handling
+Remember me functionality
+�� Product Details (pages/product.html)
+Comprehensive product information
+Quantity selection
+Add to cart and buy now options
+Wishlist functionality
+Share product feature
+Related products display
+🎨 Design Features:
+Responsive Design - Mobile-first approach
+Modern UI/UX - Clean, intuitive interface
+Smooth Animations - CSS transitions and effects
+Professional Styling - Consistent color scheme and typography
+🔧 Technical Architecture:
+Modular JavaScript - Organized into separate files by functionality
+Local Storage - Data persistence for users, products, and cart
+Role-Based Access - Customer, Seller, and Admin roles
+Form Validation - Real-time validation with error messages
+📊 Sample Data:
+8 Electronics Products - Smartphones, laptops, audio equipment, smart home devices
+3 Demo Accounts - Customer, Seller, and Admin with password: password123
+Categories - Smartphones, Laptops, Audio, Smart Home
+🚀 How to Use:
+Open index.html in a web browser
+Browse products on the catalog page
+Login with demo accounts:
+Customer: customer@example.com / password123
+Seller: seller@example.com / password123
+Admin: admin@example.com / password123
+Add products to cart and complete the shopping experience
+Test all features including filtering, search, and checkout
