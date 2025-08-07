@@ -1,0 +1,37 @@
+Electro-Mart/
+├── index.html (Homepage)
+├── pages/
+│   ├── catalog.html (Product catalog)
+│   ├── product.html (Product details)
+│   ├── cart.html (Shopping cart)
+│   ├── checkout.html (Checkout process)
+│   ├── login.html (User login)
+│   ├── register.html (User registration)
+│   ├── about.html (About us)
+│   ├── contact.html (Contact form)
+│   ├── faq.html (Frequently asked questions)
+│   ├── privacy.html (Privacy policy)
+│   ├── terms.htm (Terms of service)
+│   ├── support.html (Customer support)
+│   ├── warranty.html (Warranty information)
+│   ├── returns.html (Returns policy)
+│   ├── shipping.html (Shipping information)
+│   └── dashboard/
+│       ├── customer.html (Customer dashboard)
+│       ├── seller.html (Seller dashboard)
+│       └── admin.html (Admin panel)
+├── assets/
+│   ├── css/
+│   │   └── main.css (Main stylesheet)
+│   ├── js/
+│   │   ├── main.js (Core functionality)
+│   │   ├── auth.js (Authentication)
+│   │   ├── cart.js (Shopping cart)
+│   │   ├── catalog.js (Product catalog)
+│   │   ├── product.js (Product details)
+│   │   ├── admin-panel.js (Admin functionality)
+│   │   ├── seller-dashboard.js (Seller functionality)
+│   │   ├── customer-dashboard.js (Customer functionality)
+│   │   └── contact.js (Contact management)
+│   └── images/ (Product images)
+└── README.md (Project documentation)

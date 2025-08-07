@@ -6,14 +6,15 @@
     <title>Contact Us - ElectroMart</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="../assets/css/main.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!-- Enhanced Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="../index.html">
-                <i class="fas fa-bolt me-2"></i>ElectroMart
+                <i class="fas fa-bolt"></i> <span class="gradient-text">ElectroMart</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -21,20 +22,56 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Home</a>
+                        <a class="nav-link" href="../index.html">
+                            <i class="fas fa-home"></i> Home
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="catalog.html">Products</a>
+                        <a class="nav-link" href="catalog.html">
+                            <i class="fas fa-th-large"></i> Products
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="contact.html">Contact</a>
+                        <a class="nav-link active" href="contact.html">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
                     </li>
                 </ul>
-                <ul class="navbar-nav" id="auth-nav">
-                    <!-- Auth navigation will be populated by JavaScript -->
+                <ul class="navbar-nav">
+                    <li class="nav-item position-relative">
+                        <a class="nav-link" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            <span class="badge cart-count">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="login.html">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </a></li>
+                            <li><a class="dropdown-item" href="register.html">
+                                <i class="fas fa-user-plus"></i> Register
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="dashboard/customer.html">
+                                <i class="fas fa-tachometer-alt"></i> My Dashboard
+                            </a></li>
+                            <li><a class="dropdown-item" href="dashboard/seller.html">
+                                <i class="fas fa-store"></i> Seller Dashboard
+                            </a></li>
+                            <li><a class="dropdown-item" href="dashboard/admin.html">
+                                <i class="fas fa-shield-alt"></i> Admin Panel
+                            </a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>

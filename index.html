@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ElectroMart - Electronics E-commerce</title>
+    <title>ElectroMart - Premium Electronics Store</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <!-- Enhanced Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <i class="fas fa-bolt"></i> ElectroMart
+                <i class="fas fa-bolt"></i> <span class="gradient-text">ElectroMart</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -21,36 +22,54 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link active" href="index.html">
+                            <i class="fas fa-home"></i> Home
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/catalog.html">Products</a>
+                        <a class="nav-link" href="pages/catalog.html">
+                            <i class="fas fa-th-large"></i> Products
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/about.html">About</a>
+                        <a class="nav-link" href="pages/about.html">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/contact.html">Contact</a>
+                        <a class="nav-link" href="pages/contact.html">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    <li class="nav-item position-relative">
                         <a class="nav-link" href="pages/cart.html">
                             <i class="fas fa-shopping-cart"></i> Cart
-                            <span class="badge bg-danger cart-count">0</span>
+                            <span class="badge cart-count">0</span>
                         </a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
-                            <i class="fas fa-user"></i> Account
+                            <i class="fas fa-user-circle"></i> Account
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="pages/login.html">Login</a></li>
-                            <li><a class="dropdown-item" href="pages/register.html">Register</a></li>
+                            <li><a class="dropdown-item" href="pages/login.html">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </a></li>
+                            <li><a class="dropdown-item" href="pages/register.html">
+                                <i class="fas fa-user-plus"></i> Register
+                            </a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="pages/dashboard/customer.html">My Dashboard</a></li>
-                            <li><a class="dropdown-item" href="pages/dashboard/seller.html">Seller Dashboard</a></li>
-                            <li><a class="dropdown-item" href="pages/dashboard/admin.html">Admin Panel</a></li>
+                            <li><a class="dropdown-item" href="pages/dashboard/customer.html">
+                                <i class="fas fa-tachometer-alt"></i> My Dashboard
+                            </a></li>
+                            <li><a class="dropdown-item" href="pages/dashboard/seller.html">
+                                <i class="fas fa-store"></i> Seller Dashboard
+                            </a></li>
+                            <li><a class="dropdown-item" href="pages/dashboard/admin.html">
+                                <i class="fas fa-shield-alt"></i> Admin Panel
+                            </a></li>
                         </ul>
                     </li>
                 </ul>
@@ -58,149 +77,266 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Enhanced Hero Section -->
     <section class="hero-section">
         <div class="container">
             <div class="row align-items-center min-vh-100">
                 <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold text-white mb-4">
-                        Welcome to ElectroMart
-                    </h1>
-                    <p class="lead text-white mb-4">
-                        Discover the latest electronics and gadgets at unbeatable prices. 
-                        From smartphones to smart home devices, we have everything you need.
-                    </p>
-                    <div class="d-flex gap-3">
-                        <a href="pages/catalog.html" class="btn btn-primary btn-lg">
-                            <i class="fas fa-shopping-bag"></i> Shop Now
-                        </a>
-                        <a href="pages/about.html" class="btn btn-outline-light btn-lg">
-                            Learn More
-                        </a>
+                    <div class="hero-content">
+                        <h1 class="display-3 fw-bold mb-4">
+                            Discover Amazing <span class="gradient-text">Electronics</span>
+                        </h1>
+                        <p class="lead mb-4">
+                            Experience the future of technology with our premium collection of electronics. 
+                            From cutting-edge smartphones to smart home devices, we bring innovation to your doorstep.
+                        </p>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="pages/catalog.html" class="btn btn-primary btn-lg hover-lift">
+                                <i class="fas fa-shopping-bag"></i> Shop Now
+                            </a>
+                            <a href="pages/about.html" class="btn btn-outline-light btn-lg hover-lift">
+                                <i class="fas fa-info-circle"></i> Learn More
+                            </a>
+                        </div>
+                        <div class="mt-4 d-flex gap-4 text-white">
+                            <div class="text-center">
+                                <h4 class="mb-0">10K+</h4>
+                                <small>Happy Customers</small>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="mb-0">500+</h4>
+                                <small>Products</small>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="mb-0">24/7</h4>
+                                <small>Support</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="hero-image">
-                        <img src="assets/images/hero-electronics.jpg" alt="Electronics" class="img-fluid rounded">
+                    <div class="hero-image text-center">
+                        <img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Premium Electronics" class="img-fluid rounded-custom shadow-custom">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Categories -->
+    <!-- Enhanced Featured Categories -->
     <section class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5">Shop by Category</h2>
+            <div class="text-center mb-5">
+                <h2 class="gradient-text mb-3">Shop by Category</h2>
+                <p class="text-muted">Explore our curated collection of premium electronics</p>
+            </div>
             <div class="row g-4">
                 <div class="col-md-3">
-                    <div class="category-card text-center">
+                    <div class="category-card text-center hover-lift">
                         <div class="category-icon mb-3">
-                            <i class="fas fa-mobile-alt fa-3x text-primary"></i>
+                            <i class="fas fa-mobile-alt fa-3x"></i>
                         </div>
-                        <h5>Smartphones</h5>
-                        <p class="text-muted">Latest mobile devices</p>
-                        <a href="pages/catalog.html?category=smartphones" class="btn btn-outline-primary">Browse</a>
+                        <h5 class="mb-3">Smartphones</h5>
+                        <p class="text-muted mb-3">Latest mobile devices with cutting-edge features</p>
+                        <a href="pages/catalog.html?category=smartphones" class="btn btn-outline-primary">
+                            <i class="fas fa-arrow-right"></i> Explore
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="category-card text-center">
+                    <div class="category-card text-center hover-lift">
                         <div class="category-icon mb-3">
-                            <i class="fas fa-laptop fa-3x text-primary"></i>
+                            <i class="fas fa-laptop fa-3x"></i>
                         </div>
-                        <h5>Laptops</h5>
-                        <p class="text-muted">High-performance computers</p>
-                        <a href="pages/catalog.html?category=laptops" class="btn btn-outline-primary">Browse</a>
+                        <h5 class="mb-3">Laptops</h5>
+                        <p class="text-muted mb-3">Powerful computing solutions for work and play</p>
+                        <a href="pages/catalog.html?category=laptops" class="btn btn-outline-primary">
+                            <i class="fas fa-arrow-right"></i> Explore
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="category-card text-center">
+                    <div class="category-card text-center hover-lift">
                         <div class="category-icon mb-3">
-                            <i class="fas fa-headphones fa-3x text-primary"></i>
+                            <i class="fas fa-headphones fa-3x"></i>
                         </div>
-                        <h5>Audio</h5>
-                        <p class="text-muted">Premium sound equipment</p>
-                        <a href="pages/catalog.html?category=audio" class="btn btn-outline-primary">Browse</a>
+                        <h5 class="mb-3">Audio</h5>
+                        <p class="text-muted mb-3">Premium sound systems and headphones</p>
+                        <a href="pages/catalog.html?category=audio" class="btn btn-outline-primary">
+                            <i class="fas fa-arrow-right"></i> Explore
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="category-card text-center">
+                    <div class="category-card text-center hover-lift">
                         <div class="category-icon mb-3">
-                            <i class="fas fa-home fa-3x text-primary"></i>
+                            <i class="fas fa-gamepad fa-3x"></i>
                         </div>
-                        <h5>Smart Home</h5>
-                        <p class="text-muted">Automated living solutions</p>
-                        <a href="pages/catalog.html?category=smart-home" class="btn btn-outline-primary">Browse</a>
+                        <h5 class="mb-3">Gaming</h5>
+                        <p class="text-muted mb-3">High-performance gaming equipment</p>
+                        <a href="pages/catalog.html?category=gaming" class="btn btn-outline-primary">
+                            <i class="fas fa-arrow-right"></i> Explore
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Products -->
+    <!-- Enhanced Featured Products -->
     <section class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Featured Products</h2>
+            <div class="text-center mb-5">
+                <h2 class="gradient-text mb-3">Featured Products</h2>
+                <p class="text-muted">Handpicked products for tech enthusiasts</p>
+            </div>
             <div class="row g-4" id="featured-products">
-                <!-- Products will be loaded dynamically -->
+                <!-- Featured products will be loaded dynamically -->
+            </div>
+            <div class="text-center mt-5">
+                <a href="pages/catalog.html" class="btn btn-primary btn-lg hover-lift">
+                    <i class="fas fa-th-large"></i> View All Products
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
+    <!-- Enhanced Features Section -->
+    <section class="py-5 bg-light">
         <div class="container">
-            <div class="row">
+            <div class="text-center mb-5">
+                <h2 class="gradient-text mb-3">Why Choose ElectroMart?</h2>
+                <p class="text-muted">We're committed to providing the best shopping experience</p>
+            </div>
+            <div class="row g-4">
                 <div class="col-md-4">
-                    <h5><i class="fas fa-bolt"></i> ElectroMart</h5>
-                    <p>Your trusted source for quality electronics and gadgets.</p>
-                    <div class="social-links">
-                        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                    <div class="card border-0 shadow-custom hover-lift text-center h-100">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-shipping-fast fa-3x gradient-text"></i>
+                            </div>
+                            <h5 class="card-title">Fast Shipping</h5>
+                            <p class="card-text text-muted">Free shipping on orders over $50. Get your products delivered within 2-3 business days.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <h6>Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="pages/catalog.html" class="text-white-50">Products</a></li>
-                        <li><a href="pages/about.html" class="text-white-50">About Us</a></li>
-                        <li><a href="pages/contact.html" class="text-white-50">Contact</a></li>
-                        <li><a href="pages/faq.html" class="text-white-50">FAQ</a></li>
-                    </ul>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-custom hover-lift text-center h-100">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-shield-alt fa-3x gradient-text"></i>
+                            </div>
+                            <h5 class="card-title">Secure Payments</h5>
+                            <p class="card-text text-muted">Your payment information is protected with bank-level security encryption.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <h6>Customer Service</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="pages/shipping.html" class="text-white-50">Shipping Info</a></li>
-                        <li><a href="pages/returns.html" class="text-white-50">Returns</a></li>
-                        <li><a href="pages/warranty.html" class="text-white-50">Warranty</a></li>
-                        <li><a href="pages/support.html" class="text-white-50">Support</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h6>Newsletter</h6>
-                    <p>Subscribe for updates and exclusive offers!</p>
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Your email">
-                        <button class="btn btn-primary" type="button">Subscribe</button>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-custom hover-lift text-center h-100">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-headset fa-3x gradient-text"></i>
+                            </div>
+                            <h5 class="card-title">24/7 Support</h5>
+                            <p class="card-text text-muted">Our customer support team is available round the clock to help you.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <hr class="my-4">
-            <div class="row">
+        </div>
+    </section>
+
+    <!-- Enhanced Newsletter Section -->
+    <section class="py-5" style="background: var(--gradient-primary);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h3 class="text-white mb-3">Stay Updated</h3>
+                    <p class="text-white-50 mb-4">Subscribe to our newsletter for exclusive deals and latest product updates</p>
+                    <form class="row g-3 justify-content-center" id="newsletter-form">
+                        <div class="col-md-8">
+                            <input type="email" class="form-control form-control-lg" placeholder="Enter your email address" required>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-light btn-lg w-100 hover-lift">
+                                <i class="fas fa-paper-plane"></i> Subscribe
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="text-white mb-3">
+                        <i class="fas fa-bolt"></i> ElectroMart
+                    </h5>
+                    <p class="text-white-50 mb-4">
+                        Your trusted destination for premium electronics. We bring innovation and quality to your doorstep.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="text-white mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="pages/about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li><a href="pages/contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                        <li><a href="pages/faq.html" class="text-white-50 text-decoration-none">FAQ</a></li>
+                        <li><a href="pages/support.html" class="text-white-50 text-decoration-none">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="text-white mb-3">Categories</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="pages/catalog.html?category=smartphones" class="text-white-50 text-decoration-none">Smartphones</a></li>
+                        <li><a href="pages/catalog.html?category=laptops" class="text-white-50 text-decoration-none">Laptops</a></li>
+                        <li><a href="pages/catalog.html?category=audio" class="text-white-50 text-decoration-none">Audio</a></li>
+                        <li><a href="pages/catalog.html?category=gaming" class="text-white-50 text-decoration-none">Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="text-white mb-3">Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="pages/shipping.html" class="text-white-50 text-decoration-none">Shipping</a></li>
+                        <li><a href="pages/returns.html" class="text-white-50 text-decoration-none">Returns</a></li>
+                        <li><a href="pages/warranty.html" class="text-white-50 text-decoration-none">Warranty</a></li>
+                        <li><a href="pages/privacy.html" class="text-white-50 text-decoration-none">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="text-white mb-3">Legal</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="pages/terms.htm" class="text-white-50 text-decoration-none">Terms</a></li>
+                        <li><a href="pages/privacy.html" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                        <li><a href="pages/support.html" class="text-white-50 text-decoration-none">Support</a></li>
+                        <li><a href="pages/contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="mb-0">&copy; 2025 ElectroMart. All rights reserved.</p>
+                    <p class="text-white-50 mb-0">&copy; 2025 ElectroMart. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <a href="pages/privacy.html" class="text-white-50 me-3">Privacy Policy</a>
-                    <a href="pages/terms.html" class="text-white-50">Terms of Service</a>
+                    <img src="https://via.placeholder.com/200x40/ffffff/000000?text=Payment+Methods" alt="Payment Methods" class="img-fluid">
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/auth.js"></script>
