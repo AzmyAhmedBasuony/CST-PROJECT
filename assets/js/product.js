@@ -310,7 +310,7 @@ function showProductNotFound() {
 // Update page title
 function updatePageTitle() {
     if (currentProduct) {
-        document.title = `${currentProduct.name} - ElectroMart`;
+        document.title = `${currentProduct.name}- TECHHORA`;
     }
 }
 
