@@ -76,7 +76,7 @@ body {
   overflow-x: hidden;
 }
 .bg-primary {
-  background-color: #F79976 !important;
+  background-color: rgb(207, 132, 88) !important;
 }
 /* Modern Typography */
 h1,
@@ -850,4 +850,7 @@ footer {
 
 .neon:hover {
   box-shadow: 0 0 30px rgba(99, 102, 241, 0.8);
+}
+.nav-link {
+  color: black !important;
 }
