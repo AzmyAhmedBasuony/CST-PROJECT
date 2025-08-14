@@ -9,17 +9,20 @@ let currentViewMode = 'grid';
 document.addEventListener('DOMContentLoaded', function() {
     if (window.location.pathname.includes('catalog.html')) {
         initializeCatalog();
+
     }
 });
 
 // Initialize catalog functionality
 function initializeCatalog() {
     loadProductsFromStorage();
+    filteredProducts = products.slice();
     setupFilterEventListeners();
     loadProductsFromURL();
     displayProducts();
     updateProductCount();
 }
+
 
 // Setup filter event listeners
 function setupFilterEventListeners() {
