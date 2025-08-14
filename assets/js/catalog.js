@@ -1,17 +1,50 @@
-// Catalog JavaScript for ElectroMart
-
 let filteredProducts = [];
 let currentPage = 1;
 let productsPerPage = 12;
 let currentViewMode = 'grid';
 
 // Initialize catalog page
-document.addEventListener('DOMContentLoaded', function() {
-    if (window.location.pathname.includes('catalog.html')) {
-        initializeCatalog();
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const rangeMin = document.getElementById('range-min');
+    const rangeMax = document.getElementById('range-max');
+    const track = document.querySelector('.slider-track');
+    const priceText = document.getElementById('price-range-text');
+    const hiddenMin = document.getElementById('min-price');
+    const hiddenMax = document.getElementById('max-price');
+
+    const prices = Array.from({ length: 200 }, (_, i) => i * 830); // 0 -> 165,000 تقريبًا
+
+    function updateSlider() {
+        let minVal = Math.min(parseInt(rangeMin.value), parseInt(rangeMax.value) - 1);
+        let maxVal = Math.max(parseInt(rangeMax.value), parseInt(rangeMin.value) + 1);
+
+        rangeMin.value = minVal;
+        rangeMax.value = maxVal;
+
+        const minPrice = prices[minVal];
+        const maxPrice = prices[maxVal];
+
+        priceText.textContent = `EGP ${minPrice.toLocaleString()} – EGP ${maxPrice.toLocaleString()}`;
+        hiddenMin.value = minPrice;
+        hiddenMax.value = maxPrice;
+
+        const percent1 = (minVal / rangeMin.max) * 100;
+        const percent2 = (maxVal / rangeMax.max) * 100;
+        track.style.background = `linear-gradient(to right, #007bff ${percent1}%, #007bff ${percent2}%, #e9ecef ${percent2}%)`;
+
+        if (typeof filterProducts === 'function') {
+            filterProducts();
+        }
     }
+
+    rangeMin.addEventListener('input', updateSlider);
+    rangeMax.addEventListener('input', updateSlider);
+
+    updateSlider();
 });
+
 
 // Initialize catalog functionality
 function initializeCatalog() {
@@ -23,27 +56,21 @@ function initializeCatalog() {
     updateProductCount();
 }
 
-
 // Setup filter event listeners
 function setupFilterEventListeners() {
-    // Category filter
     document.querySelectorAll('input[name="category"]').forEach(radio => {
         radio.addEventListener('change', filterProducts);
     });
 
-    // Price filter
     document.getElementById('min-price').addEventListener('input', filterProducts);
     document.getElementById('max-price').addEventListener('input', filterProducts);
 
-    // Rating filter
     document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
         checkbox.addEventListener('change', filterProducts);
     });
 
-    // Sort select
     document.getElementById('sort-select').addEventListener('change', filterProducts);
 
-    // Search input
     document.getElementById('search-input').addEventListener('input', filterProducts);
 }
 
@@ -65,32 +92,19 @@ function filterProducts() {
         .map(cb => parseInt(cb.value));
     const sortBy = document.getElementById('sort-select').value;
 
-    // Filter products
     filteredProducts = products.filter(product => {
-        // Search filter
         const matchesSearch = product.name.toLowerCase().includes(searchTerm) ||
                             product.description.toLowerCase().includes(searchTerm);
-
-        // Category filter
         const matchesCategory = !selectedCategory || product.category === selectedCategory;
-
-        // Price filter
         const matchesPrice = product.price >= minPrice && product.price <= maxPrice;
-
-        // Rating filter
         const matchesRating = selectedRatings.length === 0 || 
                             selectedRatings.some(rating => product.rating >= rating);
 
         return matchesSearch && matchesCategory && matchesPrice && matchesRating;
     });
 
-    // Sort products
     sortProducts(sortBy);
-
-    // Reset to first page
     currentPage = 1;
-
-    // Display products
     displayProducts();
     updateProductCount();
     updatePagination();
@@ -223,14 +237,10 @@ function displayListProducts(productsToShow, container) {
 // Set view mode (grid or list)
 function setViewMode(mode) {
     currentViewMode = mode;
-    
-    // Update button states
     document.querySelectorAll('.btn-group .btn').forEach(btn => {
         btn.classList.remove('active');
     });
     event.target.classList.add('active');
-    
-    // Redisplay products
     displayProducts();
 }
 
@@ -264,14 +274,12 @@ function updatePagination() {
 
     let paginationHTML = '';
     
-    // Previous button
     paginationHTML += `
         <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
             <a class="page-link" href="#" onclick="goToPage(${currentPage - 1})">Previous</a>
         </li>
     `;
 
-    // Page numbers
     const maxVisiblePages = 5;
     let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
     let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
@@ -288,7 +296,6 @@ function updatePagination() {
         `;
     }
 
-    // Next button
     paginationHTML += `
         <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
             <a class="page-link" href="#" onclick="goToPage(${currentPage + 1})">Next</a>
@@ -307,8 +314,6 @@ function goToPage(page) {
         displayProducts();
         updateProductCount();
         updatePagination();
-        
-        // Scroll to top of products
         document.getElementById('products-container').scrollIntoView({ 
             behavior: 'smooth',
             block: 'start'
@@ -318,25 +323,14 @@ function goToPage(page) {
 
 // Clear all filters
 function clearFilters() {
-    // Reset search
     document.getElementById('search-input').value = '';
-    
-    // Reset category
     document.getElementById('all').checked = true;
-    
-    // Reset price
     document.getElementById('min-price').value = '';
     document.getElementById('max-price').value = '';
-    
-    // Reset rating
     document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
         cb.checked = false;
     });
-    
-    // Reset sort
     document.getElementById('sort-select').value = 'name';
-    
-    // Reapply filters
     filterProducts();
 }
 
@@ -366,4 +360,4 @@ window.Catalog = {
     clearFilters,
     goToPage,
     generateStarRating
-}; 
+};

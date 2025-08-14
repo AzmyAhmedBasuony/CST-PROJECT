@@ -138,6 +138,90 @@ function initializeSampleProducts() {
             stock: 150,
             seller: "Amazon Store",
             featured: false
+        },
+        {
+            id: 9,
+            name: "LG OLED C3 55\"",
+            category: "televisions",
+            price: 1799.99,
+            description: "Stunning 4K OLED TV with perfect blacks and vibrant colors",
+            image: "assets/images/lg-oled.jpg",
+            rating: 4.7,
+            stock: 40,
+            seller: "LG Store",
+            featured: true
+        },
+        {
+            id: 10,
+            name: "ASUS ROG Strix",
+            category: "laptops",
+            price: 1899.99,
+            description: "High-performance gaming laptop with RTX 4080",
+            image: "assets/images/asus-rog.jpg",
+            rating: 4.6,
+            stock: 20,
+            seller: "ASUS Store",
+            featured: true
+        },
+        {
+            id: 11,
+            name: "JBL Charge 5",
+            category: "audio",
+            price: 149.99,
+            description: "Portable Bluetooth speaker with powerful sound",
+            image: "assets/images/jbl-charge5.jpg",
+            rating: 4.5,
+            stock: 80,
+            seller: "JBL Store",
+            featured: false
+        },
+        {
+            id: 12,
+            name: "OnePlus 12",
+            category: "smartphones",
+            price: 799.99,
+            description: "Flagship killer with fast charging and smooth display",
+            image: "assets/images/oneplus12.jpg",
+            rating: 4.4,
+            stock: 60,
+            seller: "OnePlus Store",
+            featured: true
+        },
+        {
+            id: 13,
+            name: "Lenovo Legion 5",
+            category: "laptops",
+            price: 1299.99,
+            description: "Gaming laptop with AMD Ryzen 7 and RTX 3060",
+            image: "assets/images/lenovo-legion.jpg",
+            rating: 4.3,
+            stock: 35,
+            seller: "Lenovo Store",
+            featured: false
+        },
+        {
+            id: 14,
+            name: "Sony PlayStation 5",
+            category: "gaming",
+            price: 499.99,
+            description: "Next-gen console with ultra-fast SSD and 4K gaming",
+            image: "assets/images/ps5.jpg",
+            rating: 4.8,
+            stock: 30,
+            seller: "Sony Store",
+            featured: true
+        },
+        {
+            id: 15,
+            name: "Microsoft Surface Pro 9",
+            category: "tablets",
+            price: 1099.99,
+            description: "2-in-1 tablet with detachable keyboard and great performance",
+            image: "assets/images/surface-pro.jpg",
+            rating: 4.6,
+            stock: 45,
+            seller: "Microsoft Store",
+            featured: true
         }
     ];
     saveProductsToStorage();
@@ -470,4 +554,4 @@ window.ElectroMart = {
     hideLoading,
     getUrlParameter,
     setUrlParameter
-}; 
+};

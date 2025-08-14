@@ -134,17 +134,22 @@
                             </div>
 
                             <!-- Price Filter -->
-                            <div class="mb-4">
-                                <h6>Price Range</h6>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <input type="number" class="form-control" id="min-price" placeholder="Min" min="0">
-                                    </div>
-                                    <div class="col-6">
-                                        <input type="number" class="form-control" id="max-price" placeholder="Max" min="0">
-                                    </div>
+                            <div class="mb-4 price-filter">
+                                <h6>Price</h6>
+                                <p id="price-range-text">EGP 0 – EGP 165,000</p>
+                                
+                                <div class="slider-container">
+                                    <input type="range" id="range-min" min="0" max="199" step="1" value="0" class="range-slider">
+                                    <input type="range" id="range-max" min="0" max="199" step="1" value="199" class="range-slider">
+                                    <div class="slider-track"></div>
                                 </div>
+                            
+                                <!-- القيم الأصلية المخفية -->
+                                <input type="hidden" id="min-price" value="0">
+                                <input type="hidden" id="max-price" value="165000">
                             </div>
+
+
 
                             <!-- Rating Filter -->
                             <div class="mb-4">
