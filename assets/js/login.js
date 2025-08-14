@@ -71,7 +71,7 @@ function handleLoginForm(event) {
                     } else if (isSeller()) {
                         window.location.href = 'dashboard/seller.html';
                     } else {
-                        window.location.href = 'dashboard/customer.html';
+                        window.location.href = '/index.html';
                     }
                 }, 1000);
             }
@@ -110,7 +110,7 @@ function initializeLoginPage() {
             } else if (isSeller()) {
                 window.location.href = 'dashboard/seller.html';
             } else {
-                window.location.href = 'dashboard/customer.html';
+                window.location.href = '/index.html';
             }
         }, 2000);
     }

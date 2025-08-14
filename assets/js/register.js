@@ -235,7 +235,8 @@ function validateField(field) {
                 clearFieldError(field);
                 return true;
             }
-            break;
+            
+            
             
         case 'tel':
             if (!value) {
@@ -248,7 +249,7 @@ function validateField(field) {
                 clearFieldError(field);
                 return true;
             }
-            break;
+            
             
         default:
             if (!value) {
@@ -263,7 +264,7 @@ function validateField(field) {
 
 // Validate phone number
 function isValidPhone(phone) {
-    const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+    const phoneRegex = /^(\+20|0)?[1-9][0-9]{9}$/;
     return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''));
 }
 
