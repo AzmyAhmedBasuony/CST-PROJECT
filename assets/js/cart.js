@@ -34,6 +34,8 @@ function addToCart(productId, quantity = 1) {
     saveCartToStorage();
     updateCartCount();
     showNotification(`${product.name} added to cart!`, 'success');
+    displayCartItems();
+    updateCartSummary();
     return true;
 }
 
@@ -47,6 +49,9 @@ function removeFromCart(productId) {
         saveCartToStorage();
         updateCartCount();
         showNotification(`${removedItem.name} removed from cart.`, 'info');
+        displayCartItems();
+        updateCartSummary();
+
         return true;
     }
     
@@ -113,6 +118,7 @@ function displayCartItems() {
                 <a href="catalog.html" class="btn btn-primary">Continue Shopping</a>
             </div>
         `;
+        if (itemCountElement) itemCountElement.textContent = '0';
         return;
     }
     
