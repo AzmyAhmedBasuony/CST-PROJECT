@@ -311,6 +311,7 @@ function validateLoginForm(email, password) {
 function validateRegistrationForm(userData) {
     const { name, email, password, confirmPassword, phone } = userData;
     
+    
     if (!name || !email || !password || !confirmPassword || !phone) {
         showNotification('Please fill in all fields.', 'error');
         return false;

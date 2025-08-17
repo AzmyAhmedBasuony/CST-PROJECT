@@ -34,6 +34,8 @@ function addToCart(productId, quantity = 1) {
     saveCartToStorage();
     updateCartCount();
     showNotification(`${product.name} added to cart!`, 'success');
+    displayCartItems();
+    updateCartSummary();
     return true;
 }
 
@@ -47,6 +49,9 @@ function removeFromCart(productId) {
         saveCartToStorage();
         updateCartCount();
         showNotification(`${removedItem.name} removed from cart.`, 'info');
+        displayCartItems();
+        updateCartSummary();
+
         return true;
     }
     
@@ -113,6 +118,7 @@ function displayCartItems() {
                 <a href="catalog.html" class="btn btn-primary">Continue Shopping</a>
             </div>
         `;
+        if (itemCountElement) itemCountElement.textContent = '0';
         return;
     }
     
@@ -135,7 +141,7 @@ function displayCartItems() {
                             </div>
                         </p>
                         <p class="card-text">
-                            <strong>Subtotal:</strong> $${(item.price * item.quantity).toFixed(2)}
+                            <strong>Subtotal:</strong> EGP${(item.price * item.quantity).toFixed(2)}
                         </p>
                     </div>
                 </div>
@@ -173,20 +179,20 @@ function updateCartSummary() {
             <div class="card-body">
                 <div class="d-flex justify-content-between mb-2">
                     <span>Subtotal (${getCartItemCount()} items):</span>
-                    <span>$${subtotal.toFixed(2)}</span>
+                    <span>EGP${subtotal.toFixed(2)}</span>
                 </div>
                 <div class="d-flex justify-content-between mb-2">
                     <span>Shipping:</span>
-                    <span>${shipping === 0 ? 'FREE' : '$' + shipping.toFixed(2)}</span>
+                    <span>${shipping === 0 ? 'FREE' : 'EGP' + shipping.toFixed(2)}</span>
                 </div>
                 <div class="d-flex justify-content-between mb-2">
                     <span>Tax:</span>
-                    <span>$${tax.toFixed(2)}</span>
+                    <span>EGP${tax.toFixed(2)}</span>
                 </div>
                 <hr>
                 <div class="d-flex justify-content-between mb-3">
                     <strong>Total:</strong>
-                    <strong>$${total.toFixed(2)}</strong>
+                    <strong>EGP${total.toFixed(2)}</strong>
                 </div>
                 <button class="btn btn-primary w-100 mb-2" onclick="proceedToCheckout()">
                     Proceed to Checkout

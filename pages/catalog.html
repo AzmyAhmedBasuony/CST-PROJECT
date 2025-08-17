@@ -1,81 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Catalog- TECHHORA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link href="../assets/css/main.css" rel="stylesheet">
 </head>
+
 <body>
     <!-- Enhanced Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="../index.html">
-                <img src="../assets/images/logo.jpg" width="110px" height="100px"  alt="ElectroMart" class="img-fluid">
+     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <img src="../img/logo.jpg" width="110px" alt="logo" class="img-fluid">
+      </a>
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link active">
+               <i class="fas fa-home"></i> Home
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">
-                            <i class="fas fa-home"></i> Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="catalog.html">
-                            <i class="fas fa-th-large"></i> Products
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">
-                            <i class="fas fa-info-circle"></i> About
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
-                            <i class="fas fa-envelope"></i> Contact
-                        </a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item position-relative">
-                        <a class="nav-link" href="cart.html">
+          </li>
+          <li class="nav-item">
+            <a href="../pages/catalog.html" class="nav-link">
+                <i class="fas fa-th-large"></i> Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../pages/contact.html" class="nav-link">
+              <i class="fas fa-envelope"></i> Contact
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../pages/about.html" class="nav-link">
+               <i class="fas fa-info-circle"></i> About
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+        <li class="nav-item position-relative">
+                        <a class="nav-link active" href="../pages/cart.html">
                             <i class="fas fa-shopping-cart"></i> Cart
                             <span class="badge cart-count">0</span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
                             <i class="fas fa-user-circle"></i> Account
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="login.html">
+              <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="pages/login.html">
                                 <i class="fas fa-sign-in-alt"></i> Login
                             </a></li>
-                            <li><a class="dropdown-item" href="register.html">
+                            <li><a class="dropdown-item" href="pages/register.html">
                                 <i class="fas fa-user-plus"></i> Register
                             </a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="dashboard/customer.html">
+                            <li><a class="dropdown-item" href="pages/dashboard/customer.html">
                                 <i class="fas fa-tachometer-alt"></i> My Dashboard
                             </a></li>
-                            <li><a class="dropdown-item" href="dashboard/seller.html">
+                            <li><a class="dropdown-item" href="pages/dashboard/seller.html">
                                 <i class="fas fa-store"></i> Seller Dashboard
                             </a></li>
-                            <li><a class="dropdown-item" href="dashboard/admin.html">
+                            <li><a class="dropdown-item" href="pages/dashboard/admin.html">
                                 <i class="fas fa-shield-alt"></i> Admin Panel
                             </a></li>
                         </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
 
     <!-- Page Header -->
     <section class="bg-primary text-white py-5 mt-5">
@@ -112,39 +119,51 @@
                             <div class="mb-4">
                                 <h6>Category</h6>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="category" id="all" value="" checked>
+                                    <input class="form-check-input" type="radio" name="category" id="all" value=""
+                                        checked>
                                     <label class="form-check-label" for="all">All Categories</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="category" id="smartphones" value="smartphones">
+                                    <input class="form-check-input" type="radio" name="category" id="smartphones"
+                                        value="Smartphones">
                                     <label class="form-check-label" for="smartphones">Smartphones</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="category" id="laptops" value="laptops">
+                                    <input class="form-check-input" type="radio" name="category" id="laptops"
+                                        value="laptops">
                                     <label class="form-check-label" for="laptops">Laptops</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="category" id="audio" value="audio">
+                                    <input class="form-check-input" type="radio" name="category" id="audio"
+                                        value="audio">
                                     <label class="form-check-label" for="audio">Audio</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="category" id="smart-home" value="smart-home">
+                                    <input class="form-check-input" type="radio" name="category" id="smart-home"
+                                        value="smart-home">
                                     <label class="form-check-label" for="smart-home">Smart Home</label>
                                 </div>
                             </div>
 
                             <!-- Price Filter -->
-                            <div class="mb-4">
-                                <h6>Price Range</h6>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <input type="number" class="form-control" id="min-price" placeholder="Min" min="0">
-                                    </div>
-                                    <div class="col-6">
-                                        <input type="number" class="form-control" id="max-price" placeholder="Max" min="0">
-                                    </div>
+                            <!-- Price Filter -->
+                            <div class="mb-4 price-filter">
+                                <h6>Price</h6>
+                                <p id="price-range-text">EGP 0 – EGP 165,000</p>
+
+                                <div class="slider-container">
+                                    <input type="range" id="range-min" min="0" max="165000" step="1" value="0"
+                                        class="range-slider">
+                                    <input type="range" id="range-max" min="0" max="165000" step="1" value="165000"
+                                        class="range-slider">
+                                    <div class="slider-track"></div>
                                 </div>
+
+                                <!-- القيم الأصلية المخفية -->
+                                <input type="hidden" id="min-price" value="0">
+                                <input type="hidden" id="max-price" value="165000">
                             </div>
+
 
                             <!-- Rating Filter -->
                             <div class="mb-4">
@@ -207,10 +226,10 @@
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h5 id="product-count">Showing 0 products</h5>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-outline-primary active" onclick="setViewMode('grid')">
+                            <button type="button" class="btn btn-outline-primary active" onclick="setViewMode('grid',event)">
                                 <i class="fas fa-th"></i>
                             </button>
-                            <button type="button" class="btn btn-outline-primary" onclick="setViewMode('list')">
+                            <button type="button" class="btn btn-outline-primary" onclick="setViewMode('list',event)">
                                 <i class="fas fa-list"></i>
                             </button>
                         </div>
@@ -232,58 +251,71 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
+   <footer class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="../assets/images/logo-footer.jpg" width="110px" height="100px"  alt="ElectroMart" class="img-fluid">
-                    <p>Your trusted source for quality electronics and gadgets.</p>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="text-white mb-3">
+                      <img src="../img/logo-footer.jpg" width="110px" height="100px"  alt="ElectroMart" class="img-fluid">
+                    </h5>
+                    <p class="text-white-50 mb-4">
+                        Your trusted destination for premium electronics. We bring innovation and quality to your doorstep.
+                    </p>
                     <div class="social-links">
-                        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <h6>Quick Links</h6>
+                <div class="col-lg-2">
+                    <h6 class="text-white mb-3">Quick Links</h6>
                     <ul class="list-unstyled">
-                        <li><a href="catalog.html" class="text-white-50">Products</a></li>
-                        <li><a href="about.html" class="text-white-50">About Us</a></li>
-                        <li><a href="contact.html" class="text-white-50">Contact</a></li>
-                        <li><a href="faq.html" class="text-white-50">FAQ</a></li>
+                        <li><a href="pages/about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li><a href="pages/contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                        <li><a href="pages/faq.html" class="text-white-50 text-decoration-none">FAQ</a></li>
+                        <li><a href="pages/support.html" class="text-white-50 text-decoration-none">Support</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
-                    <h6>Customer Service</h6>
+                <div class="col-lg-2">
+                    <h6 class="text-white mb-3">Categories</h6>
                     <ul class="list-unstyled">
-                        <li><a href="shipping.html" class="text-white-50">Shipping Info</a></li>
-                        <li><a href="returns.html" class="text-white-50">Returns</a></li>
-                        <li><a href="warranty.html" class="text-white-50">Warranty</a></li>
-                        <li><a href="support.html" class="text-white-50">Support</a></li>
+                        <li><a href="pages/catalog.html?category=smartphones" class="text-white-50 text-decoration-none">Smartphones</a></li>
+                        <li><a href="pages/catalog.html?category=laptops" class="text-white-50 text-decoration-none">Laptops</a></li>
+                        <li><a href="pages/catalog.html?category=audio" class="text-white-50 text-decoration-none">Audio</a></li>
+                        <li><a href="pages/catalog.html?category=gaming" class="text-white-50 text-decoration-none">Gaming</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
-                    <h6>Newsletter</h6>
-                    <p>Subscribe for updates and exclusive offers!</p>
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Your email">
-                        <button class="btn btn-primary" type="button">Subscribe</button>
-                    </div>
+                <div class="col-lg-2">
+                    <h6 class="text-white mb-3">Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="pages/shipping.html" class="text-white-50 text-decoration-none">Shipping</a></li>
+                        <li><a href="pages/returns.html" class="text-white-50 text-decoration-none">Returns</a></li>
+                        <li><a href="pages/warranty.html" class="text-white-50 text-decoration-none">Warranty</a></li>
+                        <li><a href="pages/privacy.html" class="text-white-50 text-decoration-none">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="text-white mb-3">Legal</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Terms</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Support</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
                 </div>
             </div>
-            <hr class="my-4">
-            <div class="row">
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="mb-0">&copy; 2025 ElectroMart. All rights reserved.</p>
+                    <p class="text-white-50 mb-0">&copy; 2025 ElectroMart. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <a href="privacy.html" class="text-white-50 me-3">Privacy Policy</a>
-                    <a href="terms.html" class="text-white-50">Terms of Service</a>
+                  
                 </div>
             </div>
         </div>
-    </footer>
+  </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/main.js"></script>
@@ -291,4 +323,5 @@
     <script src="../assets/js/cart.js"></script>
     <script src="../assets/js/catalog.js"></script>
 </body>
-</html> 
+
+</html>

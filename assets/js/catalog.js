@@ -6,7 +6,7 @@ let productsPerPage = 12;
 let currentViewMode = 'grid';
 
 // Initialize catalog page
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     if (window.location.pathname.includes('catalog.html')) {
         initializeCatalog();
     }
@@ -15,10 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
 // Initialize catalog functionality
 function initializeCatalog() {
     loadProductsFromStorage();
+    filteredProducts = products.slice();
     setupFilterEventListeners();
+    setupPriceFilterEventListeners();
     loadProductsFromURL();
     displayProducts();
     updateProductCount();
+    updatePagination();
 }
 
 // Setup filter event listeners
@@ -28,7 +31,7 @@ function setupFilterEventListeners() {
         radio.addEventListener('change', filterProducts);
     });
 
-    // Price filter
+    // Price filter inputs
     document.getElementById('min-price').addEventListener('input', filterProducts);
     document.getElementById('max-price').addEventListener('input', filterProducts);
 
@@ -44,50 +47,87 @@ function setupFilterEventListeners() {
     document.getElementById('search-input').addEventListener('input', filterProducts);
 }
 
+// Setup price filter slider event listeners
+function setupPriceFilterEventListeners() {
+    const minPriceSlider = document.getElementById('range-min');
+    const maxPriceSlider = document.getElementById('range-max');
+    const minPriceInput = document.getElementById('min-price');
+    const maxPriceInput = document.getElementById('max-price');
+
+    minPriceSlider.min = 0;
+    minPriceSlider.max = 165000;
+    maxPriceSlider.min = 0;
+    maxPriceSlider.max = 165000;
+
+    minPriceSlider.addEventListener('input', function () {
+        minPriceInput.value = minPriceSlider.value;
+        updatePriceRangeText(minPriceSlider.value, maxPriceSlider.value);
+        filterProducts();
+    });
+
+    maxPriceSlider.addEventListener('input', function () {
+        maxPriceInput.value = maxPriceSlider.value;
+        updatePriceRangeText(minPriceSlider.value, maxPriceSlider.value);
+        filterProducts();
+    });
+
+    updatePriceRangeText(minPriceSlider.value, maxPriceSlider.value);
+}
+
+// Update price range text dynamically
+function updatePriceRangeText(minValue, maxValue) {
+    const priceRangeText = document.getElementById('price-range-text');
+    priceRangeText.textContent = `EGP ${minValue} – EGP ${maxValue}`;
+}
+
 // Load products from URL parameters
 function loadProductsFromURL() {
     const category = getUrlParameter('category');
     if (category) {
-        document.querySelector(`input[value="${category}"]`).checked = true;
+        const categoryInput = document.querySelector(`input[value="${category}"]`);
+        if (categoryInput) {
+            categoryInput.checked = true;
+        }
     }
+}
+
+// Get parameter from URL
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    const results = regex.exec(window.location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 }
 
 // Filter products based on selected criteria
 function filterProducts() {
     const searchTerm = document.getElementById('search-input').value.toLowerCase();
-    const selectedCategory = document.querySelector('input[name="category"]:checked').value;
+    const selectedCategoryElement = document.querySelector('input[name="category"]:checked');
+    const selectedCategory = selectedCategoryElement ? selectedCategoryElement.value : '';
     const minPrice = parseFloat(document.getElementById('min-price').value) || 0;
     const maxPrice = parseFloat(document.getElementById('max-price').value) || Infinity;
     const selectedRatings = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
         .map(cb => parseInt(cb.value));
     const sortBy = document.getElementById('sort-select').value;
 
-    // Filter products
     filteredProducts = products.filter(product => {
-        // Search filter
         const matchesSearch = product.name.toLowerCase().includes(searchTerm) ||
-                            product.description.toLowerCase().includes(searchTerm);
+            product.description.toLowerCase().includes(searchTerm);
 
-        // Category filter
-        const matchesCategory = !selectedCategory || product.category === selectedCategory;
-
-        // Price filter
+        const matchesCategory = !selectedCategory || product.category === selectedCategory ;//=== selectedCategory;
+       
         const matchesPrice = product.price >= minPrice && product.price <= maxPrice;
 
-        // Rating filter
-        const matchesRating = selectedRatings.length === 0 || 
-                            selectedRatings.some(rating => product.rating >= rating);
+        const matchesRating = selectedRatings.length === 0 ||
+            selectedRatings.some(rating => product.rating >= rating);
 
+         
+        
         return matchesSearch && matchesCategory && matchesPrice && matchesRating;
     });
 
-    // Sort products
     sortProducts(sortBy);
-
-    // Reset to first page
     currentPage = 1;
-
-    // Display products
     displayProducts();
     updateProductCount();
     updatePagination();
@@ -159,7 +199,7 @@ function displayGridProducts(productsToShow, container) {
                         ${generateStarRating(product.rating)}
                         <small class="text-muted">(${product.rating})</small>
                     </div>
-                    <div class="product-price mb-3">$${product.price.toFixed(2)}</div>
+                    <div class="product-price mb-3">EGP ${product.price.toFixed(1)}</div>
                     <div class="mt-auto">
                         <button class="btn btn-primary w-100 mb-2" onclick="addToCart(${product.id})">
                             <i class="fas fa-shopping-cart"></i> Add to Cart
@@ -200,7 +240,7 @@ function displayListProducts(productsToShow, container) {
                                     </p>
                                 </div>
                                 <div class="col-md-4 text-end">
-                                    <div class="product-price mb-3">$${product.price.toFixed(2)}</div>
+                                    <div class="product-price mb-3">EGP ${product.price.toFixed(1)}</div>
                                     <button class="btn btn-primary mb-2" onclick="addToCart(${product.id})">
                                         <i class="fas fa-shopping-cart"></i> Add to Cart
                                     </button>
@@ -218,16 +258,12 @@ function displayListProducts(productsToShow, container) {
 }
 
 // Set view mode (grid or list)
-function setViewMode(mode) {
+function setViewMode(mode, event) {
     currentViewMode = mode;
-    
-    // Update button states
     document.querySelectorAll('.btn-group .btn').forEach(btn => {
         btn.classList.remove('active');
     });
     event.target.classList.add('active');
-    
-    // Redisplay products
     displayProducts();
 }
 
@@ -238,7 +274,7 @@ function updateProductCount() {
         const total = filteredProducts.length;
         const start = (currentPage - 1) * productsPerPage + 1;
         const end = Math.min(currentPage * productsPerPage, total);
-        
+
         if (total === 0) {
             countElement.textContent = 'No products found';
         } else {
@@ -253,26 +289,24 @@ function updatePagination() {
     if (!paginationContainer) return;
 
     const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-    
+
     if (totalPages <= 1) {
         paginationContainer.innerHTML = '';
         return;
     }
 
     let paginationHTML = '';
-    
-    // Previous button
+
     paginationHTML += `
         <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
             <a class="page-link" href="#" onclick="goToPage(${currentPage - 1})">Previous</a>
         </li>
     `;
 
-    // Page numbers
     const maxVisiblePages = 5;
     let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
     let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
-    
+
     if (endPage - startPage + 1 < maxVisiblePages) {
         startPage = Math.max(1, endPage - maxVisiblePages + 1);
     }
@@ -285,7 +319,6 @@ function updatePagination() {
         `;
     }
 
-    // Next button
     paginationHTML += `
         <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
             <a class="page-link" href="#" onclick="goToPage(${currentPage + 1})">Next</a>
@@ -298,15 +331,13 @@ function updatePagination() {
 // Go to specific page
 function goToPage(page) {
     const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-    
+
     if (page >= 1 && page <= totalPages) {
         currentPage = page;
         displayProducts();
         updateProductCount();
         updatePagination();
-        
-        // Scroll to top of products
-        document.getElementById('products-container').scrollIntoView({ 
+        document.getElementById('products-container').scrollIntoView({
             behavior: 'smooth',
             block: 'start'
         });
@@ -315,25 +346,15 @@ function goToPage(page) {
 
 // Clear all filters
 function clearFilters() {
-    // Reset search
     document.getElementById('search-input').value = '';
-    
-    // Reset category
-    document.getElementById('all').checked = true;
-    
-    // Reset price
+    const allCategory = document.getElementById('all');
+    if (allCategory) allCategory.checked = true;
     document.getElementById('min-price').value = '';
     document.getElementById('max-price').value = '';
-    
-    // Reset rating
     document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
         cb.checked = false;
     });
-    
-    // Reset sort
     document.getElementById('sort-select').value = 'name';
-    
-    // Reapply filters
     filterProducts();
 }
 
@@ -342,7 +363,7 @@ function generateStarRating(rating) {
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
     const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-    
+
     let stars = '';
     for (let i = 0; i < fullStars; i++) {
         stars += '<i class="fas fa-star"></i>';
@@ -363,4 +384,5 @@ window.Catalog = {
     clearFilters,
     goToPage,
     generateStarRating
-}; 
+};
+
