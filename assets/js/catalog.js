@@ -3,7 +3,7 @@
 let filteredProducts = [];
 let currentPage = 1;
 let productsPerPage = 12;
-let currentViewMode = 'grid';
+let currentViewMode = 'grid'; // Changed default to 'list' to make list view active initially
 
 // Initialize catalog page
 document.addEventListener('DOMContentLoaded', function () {
@@ -258,10 +258,16 @@ function displayListProducts(productsToShow, container) {
 // Set view mode (grid or list)
 function setViewMode(mode, event) {
     currentViewMode = mode;
+    
+    // إزالة الكلاس active من كل الأزرار
     document.querySelectorAll('.btn-group .btn').forEach(btn => {
         btn.classList.remove('active');
     });
+    
+    // إضافة الكلاس active للزر الذي تم الضغط عليه
     event.target.classList.add('active');
+    
+    // عرض المنتجات بناءً على المود المحدد
     displayProducts();
 }
 

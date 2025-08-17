@@ -1,7 +1,3 @@
-// Customer Dashboard JavaScript for ElectroMart
-let customerOrders = [];
-let wishlistItems = [];
-
 document.addEventListener('DOMContentLoaded', function() {
     if (window.location.pathname.includes('customer.html')) {
         initializeCustomerDashboard();
@@ -26,35 +22,9 @@ function initializeCustomerDashboard() {
 }
 
 function loadCustomerData() {
-    // Load customer orders (simulate orders for demo)
-    customerOrders = JSON.parse(localStorage.getItem('customerOrders') || '[]');
-    if (customerOrders.length === 0) {
-        // Create sample orders for demo
-        customerOrders = [
-            {
-                id: 'ORD001',
-                products: [
-                    { id: 1, name: 'iPhone 15 Pro', quantity: 1, price: 999.99 }
-                ],
-                total: 999.99,
-                date: '2025-01-15',
-                status: 'completed',
-                shippingAddress: '123 Main St, City, State 12345'
-            },
-            {
-                id: 'ORD002',
-                products: [
-                    { id: 2, name: 'MacBook Pro', quantity: 1, price: 1299.99 }
-                ],
-                total: 1299.99,
-                date: '2025-01-14',
-                status: 'pending',
-                shippingAddress: '123 Main St, City, State 12345'
-            }
-        ];
-        localStorage.setItem('customerOrders', JSON.stringify(customerOrders));
-    }
-
+    // Load customer orders from the 'orders' key (same as checkout)
+    customerOrders = JSON.parse(localStorage.getItem('orders') || '[]');
+    
     // Load wishlist
     wishlistItems = JSON.parse(localStorage.getItem('wishlist') || '[]');
 }
@@ -108,7 +78,7 @@ function loadOrders() {
                 <div class="row align-items-center">
                     <div class="col-md-3">
                         <h6 class="mb-1">Order #${order.id}</h6>
-                        <small class="text-muted">${new Date(order.date).toLocaleDateString()}</small>
+                        <small class="text-muted">${new Date(order.createdAt).toLocaleDateString()}</small>
                     </div>
                     <div class="col-md-3">
                         <span class="badge ${order.status === 'completed' ? 'bg-success' : 'bg-warning'}">
@@ -126,7 +96,7 @@ function loadOrders() {
                 </div>
                 <div class="mt-3">
                     <small class="text-muted">
-                        ${order.products.length} item(s) • Shipped to: ${order.shippingAddress}
+                        ${order.items.length} item(s) • Shipped to: ${order.shipping.address}, ${order.shipping.city}, ${order.shipping.zipCode}
                     </small>
                 </div>
             </div>
@@ -160,7 +130,7 @@ function filterOrders(status) {
                 <div class="row align-items-center">
                     <div class="col-md-3">
                         <h6 class="mb-1">Order #${order.id}</h6>
-                        <small class="text-muted">${new Date(order.date).toLocaleDateString()}</small>
+                        <small class="text-muted">${new Date(order.createdAt).toLocaleDateString()}</small>
                     </div>
                     <div class="col-md-3">
                         <span class="badge ${order.status === 'completed' ? 'bg-success' : 'bg-warning'}">
@@ -178,7 +148,7 @@ function filterOrders(status) {
                 </div>
                 <div class="mt-3">
                     <small class="text-muted">
-                        ${order.products.length} item(s) • Shipped to: ${order.shippingAddress}
+                        ${order.items.length} item(s) • Shipped to: ${order.shipping.address}, ${order.shipping.city}, ${order.shipping.zipCode}
                     </small>
                 </div>
             </div>
@@ -193,7 +163,18 @@ function viewOrderDetails(orderId) {
         return;
     }
 
-    showNotification(`Order #${order.id} - Status: ${order.status} - Total: $${order.total.toFixed(2)}`, 'info');
+    // Generate items list for display
+    const itemsList = order.items.map(item => `
+        ${item.name} (Qty: ${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}
+    `).join('<br>');
+
+    showNotification(`
+        Order #${order.id}<br>
+        Status: ${order.status}<br>
+        Items:<br>${itemsList}<br>
+        Total: $${order.total.toFixed(2)}<br>
+        Shipped to: ${order.shipping.address}, ${order.shipping.city}, ${order.shipping.zipCode}
+    `, 'info');
 }
 
 function loadProfile() {
@@ -348,4 +329,4 @@ window.CustomerDashboard = {
     initializeCustomerDashboard, loadCustomerData, updateDashboardStats, loadOrders,
     filterOrders, viewOrderDetails, loadProfile, showEditProfileModal, saveProfile,
     loadWishlist, addToCartFromWishlist, removeFromWishlist, logout
-}; 
+};
