@@ -71,7 +71,7 @@ function handleLoginForm(event) {
                     } else if (isSeller()) {
                         window.location.href = 'dashboard/seller.html';
                     } else {
-                        window.location.href = '/index.html';
+                        window.location.href = '/pages/cart.html';
                     }
                 }, 1000);
             }

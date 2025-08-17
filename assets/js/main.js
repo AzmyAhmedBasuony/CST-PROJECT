@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Initialize application
 function initializeApp() {
-     loadFeaturedProducts(); 
     loadUserFromStorage();
     loadProductsFromStorage();
 
@@ -208,11 +207,11 @@ document.getElementById('homeproduct').innerHTML= products.filter(p=>p.featured)
                     <p class="card-text text-muted">${product.description}</p>
                     <div class="product-rating mb-2">
                     ${generateStarRating(product.rating)}
-                        <small class="text-muted">(${product.rating.stars})</small>
+                        <small class="text-muted">(${product.rating})</small>
                     </div>
                     <div class="product-price mb-3">EGP${product.price.toFixed(1)}</div>
                     <div class="mt-auto">
-                        <button class="btn btn-primary w-100 mb-2" onclick="addToCart()">
+                        <button class="btn btn-primary w-100 mb-2" onclick="addToCart(${product.id})">
                             <i class="fas fa-shopping-cart"></i> Add to Cart
                         </button>
                         <a href="pages/product.html?id=${product.id}" class="btn btn-outline-primary w-100">
