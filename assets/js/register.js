@@ -123,7 +123,7 @@ function handleRegistrationForm(event) {
                     } else if (formData.role === 'seller') {
                         window.location.href = 'dashboard/seller.html';
                     } else {
-                        window.location.href = 'dashboard/customer.html';
+                        window.location.href = '/index.html';
                     }
                 }, 1000);
             }
@@ -153,7 +153,7 @@ function initializeRegisterPage() {
             } else if (isSeller()) {
                 window.location.href = 'dashboard/seller.html';
             } else {
-                window.location.href = 'dashboard/customer.html';
+                window.location.href = '/index.html';
             }
         }, 2000);
     }

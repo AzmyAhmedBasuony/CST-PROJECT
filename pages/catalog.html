@@ -221,30 +221,30 @@
                 </div>
 
                 <!-- Products Grid -->
-                <div class="col-lg-9">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h5 id="product-count">Showing 0 products</h5>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-outline-primary active" onclick="setViewMode('grid')">
-                                <i class="fas fa-th"></i>
-                            </button>
-                            <button type="button" class="btn btn-outline-primary" onclick="setViewMode('list')">
-                                <i class="fas fa-list"></i>
-                            </button>
-                        </div>
-                    </div>
+<div class="col-lg-9">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h5 id="product-count">Showing 0 products</h5>
+        <div class="btn-group" role="group">
+    <button type="button" class="btn btn-outline-primary active" onclick="setViewMode('grid', event)">
+        <i class="fas fa-th"></i>
+    </button>
+    <button type="button" class="btn btn-outline-primary" onclick="setViewMode('list', event)">
+        <i class="fas fa-list"></i>
+    </button>
+</div>
+    </div>
 
-                    <div class="row g-4" id="products-container">
-                        <!-- Products will be loaded dynamically -->
-                    </div>
+    <div class="row" id="products-container">
+        <!-- Products will be loaded dynamically -->
+    </div>
 
-                    <!-- Pagination -->
-                    <nav aria-label="Product pagination" class="mt-5">
-                        <ul class="pagination justify-content-center" id="pagination">
-                            <!-- Pagination will be generated dynamically -->
-                        </ul>
-                    </nav>
-                </div>
+    <!-- Pagination -->
+    <nav aria-label="Product pagination" class="mt-5">
+        <ul class="pagination justify-content-center" id="pagination">
+            <!-- Pagination will be generated dynamically -->
+        </ul>
+    </nav>
+</div>
             </div>
         </div>
     </section>

@@ -116,6 +116,7 @@ function loadProductsTable() {
     sellerProducts.forEach(product => {
         const row = document.createElement('tr');
         row.innerHTML = `
+        <td>${products.length}</td>
             <td>
                 <img src="${product.image || 'https://via.placeholder.com/50'}" 
                      alt="${product.name}" class="img-thumbnail" style="width: 50px; height: 50px;">
