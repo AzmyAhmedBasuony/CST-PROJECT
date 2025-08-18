@@ -87,6 +87,7 @@ function loadProductsFromURL() {
         const categoryInput = document.querySelector(`input[value="${category}"]`);
         if (categoryInput) {
             categoryInput.checked = true;
+            filterProducts()
         }
     }
 }

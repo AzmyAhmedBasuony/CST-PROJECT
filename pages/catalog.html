@@ -1,312 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Catalog- TECHHORA</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link href="../assets/css/main.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../assets/css/main.css" rel="stylesheet" />
     <style>
-        h1, h2, h3, h4, h5, h6 {
-            color: #ffff !important;
-        }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #ffff !important;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Enhanced Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="../index.html">
-                <img src="../assets/images/logo.jpg" width="110px" height="100px" alt="TECHHORA" class="img-fluid">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">
-                            <i class="fas fa-home"></i> Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="catalog.html">
-                            <i class="fas fa-th-large"></i> Products
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">
-                            <i class="fas fa-info-circle"></i> About
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
-                            <i class="fas fa-envelope"></i> Contact
-                        </a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item position-relative">
-                        <a class="nav-link" href="cart.html">
-                            <i class="fas fa-shopping-cart"></i> Cart
-                            <span class="badge cart-count">0</span>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                            data-bs-toggle="dropdown">
-                            <i class="fas fa-user-circle"></i> Account
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="login.html">
-                                    <i class="fas fa-sign-in-alt"></i> Login
-                                </a></li>
-                            <li><a class="dropdown-item" href="register.html">
-                                    <i class="fas fa-user-plus"></i> Register
-                                </a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="dashboard/customer.html">
-                                    <i class="fas fa-tachometer-alt"></i> My Dashboard
-                                </a></li>
-                            <li><a class="dropdown-item" href="dashboard/seller.html">
-                                    <i class="fas fa-store"></i> Seller Dashboard
-                                </a></li>
-                            <li><a class="dropdown-item" href="dashboard/admin.html">
-                                    <i class="fas fa-shield-alt"></i> Admin Panel
-                                </a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">
+          <img
+            src="../assets/images/logo.jpg"
+            width="110px"
+            height="100px"
+            alt="TECHHORA"
+            class="img-fluid"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">
+                <i class="fas fa-home"></i> Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="catalog.html">
+                <i class="fas fa-th-large"></i> Products
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">
+                <i class="fas fa-info-circle"></i> About
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">
+                <i class="fas fa-envelope"></i> Contact
+              </a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item position-relative">
+              <a class="nav-link" href="cart.html">
+                <i class="fas fa-shopping-cart"></i> Cart
+                <span class="badge cart-count">0</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="userDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                <i class="fas fa-user-circle"></i> Account
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="login.html">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="register.html">
+                    <i class="fas fa-user-plus"></i> Register
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="dashboard/customer.html">
+                    <i class="fas fa-tachometer-alt"></i> My Dashboard
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="dashboard/seller.html">
+                    <i class="fas fa-store"></i> Seller Dashboard
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="dashboard/admin.html">
+                    <i class="fas fa-shield-alt"></i> Admin Panel
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- Page Header -->
     <section class="bg-primary text-white py-5 mt-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h1 class="display-4 fw-bold">Product Catalog</h1>
-                    <p class="lead">Discover our amazing collection of electronics and gadgets</p>
-                </div>
-                <div class="col-md-4">
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="search-input" placeholder="Search products...">
-                        <button class="btn btn-light" type="button">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h1 class="display-4 fw-bold">Product Catalog</h1>
+            <p class="lead">
+              Discover our amazing collection of electronics and gadgets
+            </p>
+          </div>
+          <div class="col-md-4">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                id="search-input"
+                placeholder="Search products..."
+              />
+              <button class="btn btn-light" type="button">
+                <i class="fas fa-search"></i>
+              </button>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Filters and Products -->
     <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <!-- Filters Sidebar -->
-                <div class="col-lg-3">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="mb-0">Filters</h5>
-                        </div>
-                        <div class="card-body">
-                            <!-- Category Filter -->
-                            <div class="mb-4">
-                                <h6 >Category</h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="category" id="all" value=""
-                                        checked>
-                                    <label class="form-check-label" for="all">All Categories</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="category" id="smartphones"
-                                        value="smartphones">
-                                    <label class="form-check-label" for="smartphones">Smartphones</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="category" id="laptops"
-                                        value="laptops">
-                                    <label class="form-check-label" for="laptops">Laptops</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="category" id="audio"
-                                        value="audio">
-                                    <label class="form-check-label" for="audio">Audio</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="category" id="smart-home"
-                                        value="smart-home">
-                                    <label class="form-check-label" for="smart-home">Smart Home</label>
-                                </div>
-                            </div>
-
-                            <!-- Price Filter -->
-                            <!-- Price Filter -->
-                            <div class="mb-4 price-filter">
-                                <h6>Price</h6>
-                                <p id="price-range-text">EGP 0 – EGP 165,000</p>
-
-                                <div class="slider-container">
-                                    <input type="range" id="range-min" min="0" max="165000" step="1" value="0"
-                                        class="range-slider">
-                                    <input type="range" id="range-max" min="0" max="165000" step="1" value="165000"
-                                        class="range-slider">
-                                    <div class="slider-track"></div>
-                                </div>
-
-                                <!-- القيم الأصلية المخفية -->
-                                <input type="hidden" id="min-price" value="0">
-                                <input type="hidden" id="max-price" value="165000">
-                            </div>
-
-
-                            <!-- Rating Filter -->
-                            <div class="mb-4">
-                                <h6>Rating</h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="rating-5" value="5">
-                                    <label class="form-check-label" for="rating-5">
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="rating-4" value="4">
-                                    <label class="form-check-label" for="rating-4">
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="far fa-star text-warning"></i> & up
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="rating-3" value="3">
-                                    <label class="form-check-label" for="rating-3">
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="far fa-star text-warning"></i>
-                                        <i class="far fa-star text-warning"></i> & up
-                                    </label>
-                                </div>
-                            </div>
-
-                            <!-- Sort Options -->
-                            <div class="mb-4">
-                                <h6>Sort By</h6>
-                                <select class="form-select" id="sort-select">
-                                    <option value="name">Name A-Z</option>
-                                    <option value="name-desc">Name Z-A</option>
-                                    <option value="price">Price Low to High</option>
-                                    <option value="price-desc">Price High to Low</option>
-                                    <option value="rating">Rating High to Low</option>
-                                    <option value="newest">Newest First</option>
-                                </select>
-                            </div>
-
-                            <!-- Clear Filters -->
-                            <button class="btn btn-outline-secondary w-100" onclick="clearFilters()">
-                                Clear Filters
-                            </button>
-                        </div>
-                    </div>
+      <div class="container">
+        <div class="row">
+          <!-- Filters Sidebar -->
+          <div class="col-lg-3">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="mb-0">Filters</h5>
+              </div>
+              <div class="card-body">
+                <!-- Category Filter -->
+                <div class="mb-4">
+                  <h6>Category</h6>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="category"
+                      id="all"
+                      value=""
+                      checked
+                    />
+                    <label class="form-check-label" for="all"
+                      >All Categories</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="category"
+                      id="electronics"
+                      value="electronics"
+                    />
+                    <label class="form-check-label" for="electronics"
+                      >Electronics</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="category"
+                      id="jewelry"
+                      value="jewelry"
+                    />
+                    <label class="form-check-label" for="jewelry"
+                      >Jewelery</label
+                    >
+                  </div>
+                   <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="category"
+                      id="clothing"
+                      value="clothing"
+                    />
+                    <label class="form-check-label" for="clothing"
+                      >Clothing</label
+                    >
+                  </div>
+            
                 </div>
 
-                <!-- Products Grid -->
-<div class="col-lg-9">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h5 id="product-count">Showing 0 products</h5>
-        <div class="btn-group" role="group">
-    <button type="button" class="btn btn-outline-primary active" onclick="setViewMode('grid', event)">
-        <i class="fas fa-th"></i>
-    </button>
-    <button type="button" class="btn btn-outline-primary" onclick="setViewMode('list', event)">
-        <i class="fas fa-list"></i>
-    </button>
-</div>
-    </div>
+                <!-- Price Filter -->
+                <!-- Price Filter -->
+                <div class="mb-4 price-filter">
+                  <h6>Price</h6>
+                  <p id="price-range-text">EGP 0 – EGP 165,000</p>
 
-    <div class="row" id="products-container">
-        <!-- Products will be loaded dynamically -->
-    </div>
+                  <div class="slider-container">
+                    <input
+                      type="range"
+                      id="range-min"
+                      min="0"
+                      max="165000"
+                      step="1"
+                      value="0"
+                      class="range-slider"
+                    />
+                    <input
+                      type="range"
+                      id="range-max"
+                      min="0"
+                      max="165000"
+                      step="1"
+                      value="165000"
+                      class="range-slider"
+                    />
+                    <div class="slider-track"></div>
+                  </div>
 
-    <!-- Pagination -->
-    <nav aria-label="Product pagination" class="mt-5">
-        <ul class="pagination justify-content-center" id="pagination">
-            <!-- Pagination will be generated dynamically -->
-        </ul>
-    </nav>
-</div>
+                  <!-- القيم الأصلية المخفية -->
+                  <input type="hidden" id="min-price" value="0" />
+                  <input type="hidden" id="max-price" value="165000" />
+                </div>
+
+                <!-- Rating Filter -->
+                <div class="mb-4">
+                  <h6>Rating</h6>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="rating-5"
+                      value="5"
+                    />
+                    <label class="form-check-label" for="rating-5">
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="rating-4"
+                      value="4"
+                    />
+                    <label class="form-check-label" for="rating-4">
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="far fa-star text-warning"></i> & up
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="rating-3"
+                      value="3"
+                    />
+                    <label class="form-check-label" for="rating-3">
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="far fa-star text-warning"></i>
+                      <i class="far fa-star text-warning"></i> & up
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Sort Options -->
+                <div class="mb-4">
+                  <h6>Sort By</h6>
+                  <select class="form-select" id="sort-select">
+                    <option value="name">Name A-Z</option>
+                    <option value="name-desc">Name Z-A</option>
+                    <option value="price">Price Low to High</option>
+                    <option value="price-desc">Price High to Low</option>
+                    <option value="rating">Rating High to Low</option>
+                    <option value="newest">Newest First</option>
+                  </select>
+                </div>
+
+                <!-- Clear Filters -->
+                <button
+                  class="btn btn-outline-secondary w-100"
+                  onclick="clearFilters()"
+                >
+                  Clear Filters
+                </button>
+              </div>
             </div>
+          </div>
+
+          <!-- Products Grid -->
+          <div class="col-lg-9">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h5 id="product-count">Showing 0 products</h5>
+              <div class="btn-group" role="group">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary active"
+                  onclick="setViewMode('grid', event)"
+                >
+                  <i class="fas fa-th"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-primary"
+                  onclick="setViewMode('list', event)"
+                >
+                  <i class="fas fa-list"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="row" id="products-container">
+              <!-- Products will be loaded dynamically -->
+            </div>
+
+            <!-- Pagination -->
+            <nav aria-label="Product pagination" class="mt-5">
+              <ul class="pagination justify-content-center" id="pagination">
+                <!-- Pagination will be generated dynamically -->
+              </ul>
+            </nav>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer class=" text-white py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="../assets/images/logo-footer.jpg" width="110px" height="100px" alt="TECHHORA"
-                        class="img-fluid">
-                    <p>Your trusted source for quality electronics and gadgets.</p>
-                    <div class="social-links">
-                        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <h6>Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="catalog.html" class="text-white-50">Products</a></li>
-                        <li><a href="about.html" class="text-white-50">About Us</a></li>
-                        <li><a href="contact.html" class="text-white-50">Contact</a></li>
-                        <li><a href="faq.html" class="text-white-50">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h6>Customer Service</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="shipping.html" class="text-white-50">Shipping Info</a></li>
-                        <li><a href="returns.html" class="text-white-50">Returns</a></li>
-                        <li><a href="warranty.html" class="text-white-50">Warranty</a></li>
-                        <li><a href="support.html" class="text-white-50">Support</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h6>Newsletter</h6>
-                    <p>Subscribe for updates and exclusive offers!</p>
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Your email">
-                        <button class="btn btn-primary" type="button">Subscribe</button>
-                    </div>
-                </div>
+    <footer class="text-white py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img
+              src="../assets/images/logo-footer.jpg"
+              width="110px"
+              height="100px"
+              alt="TECHHORA"
+              class="img-fluid"
+            />
+            <p>Your trusted source for quality electronics and gadgets.</p>
+            <div class="social-links">
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
             </div>
-            <hr class="my-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2025 TECHHORA. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <a href="privacy.html" class="text-white-50 me-3">Privacy Policy</a>
-                    <a href="terms.htm" class="text-white-50">Terms of Service</a>
-                </div>
+          </div>
+          <div class="col-md-2">
+            <h6>Quick Links</h6>
+            <ul class="list-unstyled">
+              <li><a href="catalog.html" class="text-white-50">Products</a></li>
+              <li><a href="about.html" class="text-white-50">About Us</a></li>
+              <li><a href="contact.html" class="text-white-50">Contact</a></li>
+              <li><a href="faq.html" class="text-white-50">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h6>Customer Service</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="shipping.html" class="text-white-50">Shipping Info</a>
+              </li>
+              <li><a href="returns.html" class="text-white-50">Returns</a></li>
+              <li>
+                <a href="warranty.html" class="text-white-50">Warranty</a>
+              </li>
+              <li><a href="support.html" class="text-white-50">Support</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h6>Newsletter</h6>
+            <p>Subscribe for updates and exclusive offers!</p>
+            <div class="input-group">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Your email"
+              />
+              <button class="btn btn-primary" type="button">Subscribe</button>
             </div>
+          </div>
         </div>
+        <hr class="my-4" />
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-0">&copy; 2025 TECHHORA. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="privacy.html" class="text-white-50 me-3">Privacy Policy</a>
+            <a href="terms.htm" class="text-white-50">Terms of Service</a>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -314,6 +442,5 @@
     <script src="../assets/js/auth.js"></script>
     <script src="../assets/js/cart.js"></script>
     <script src="../assets/js/catalog.js"></script>
-</body>
-
+  </body>
 </html>

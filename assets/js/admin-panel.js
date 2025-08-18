@@ -409,12 +409,12 @@ function editUser(userId) {
 
 function saveUser() {
     const formData = {
-        name: document.getElementById('user-name').value.trim(),
-        email: document.getElementById('user-email').value.trim(),
+        name: document.getElementById('user-name').value,
+        email: document.getElementById('user-email').value,
         password: document.getElementById('user-password').value,
         role: document.getElementById('user-role').value,
-        phone: document.getElementById('user-phone').value.trim(),
-        address: document.getElementById('user-address').value.trim(),
+        phone: document.getElementById('user-phone').value,
+        address: document.getElementById('user-address').value,
         status: document.getElementById('user-status').value,
         verified: document.getElementById('user-verified').checked
     };
