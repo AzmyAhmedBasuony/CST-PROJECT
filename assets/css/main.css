@@ -94,7 +94,7 @@ h5,
 h6 {
   font-weight: 700;
   line-height: 1.2;
-  color: var(--gray-900);
+  color: var(--white);
 }
 
 h1 {
@@ -416,15 +416,9 @@ footer {
   margin: 0;
   padding: 0;
   background: var(--primary--color-2);
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: #fff !important;
-  }
+
 }
+
 
 .social-links a {
   color: white;
