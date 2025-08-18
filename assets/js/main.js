@@ -29,14 +29,37 @@ function loadUserFromStorage() {
     }
 }
 
-// Load products from localStorage
-function loadProductsFromStorage() {
+// Load products from localStorage or API
+async function loadProductsFromStorage() {
     const productsData = localStorage.getItem('products');
     if (productsData) {
         products = JSON.parse(productsData);
     } else {
-        // Initialize with sample products if none exist
-        initializeSampleProducts();
+        // Try to load from API first, fallback to sample products
+        try {
+            await loadProductsFromAPI();
+        } catch (error) {
+            console.log('API failed, using sample products:', error);
+            initializeSampleProducts();
+        }
+    }
+}
+
+// Load products from API
+async function loadProductsFromAPI() {
+    try {
+        // Check if API service is available
+        if (typeof apiService !== 'undefined') {
+            const apiProducts = await apiService.fetchProducts();
+            products = apiProducts;
+            localStorage.setItem('products', JSON.stringify(products));
+            console.log('Products loaded from API:', products.length);
+        } else {
+            throw new Error('API service not available');
+        }
+    } catch (error) {
+        console.error('Failed to load products from API:', error);
+        throw error;
     }
 }
 
@@ -263,7 +286,7 @@ function loadFeaturedProducts() {
     const productsToShow = featuredProducts.slice(0, 4); // Show only 4 featured products
 
     featuredContainer.innerHTML = productsToShow.map(product => `
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col-lg-4 col-md-6 mb-4">
             <div class="card product-card h-100">
                 <img src="${product.image}" class="card-img-top" alt="${product.name}" onerror="this.src='assets/images/placeholder.jpg'">
                 <div class="card-body d-flex flex-column">
@@ -504,6 +527,77 @@ function getProductsByCategory(category) {
     return products.filter(product => product.category === category);
 }
 
+// Get products from API by category
+async function getProductsByCategoryFromAPI(category) {
+    try {
+        if (typeof apiService !== 'undefined') {
+            return await apiService.fetchProductsByCategory(category);
+        } else {
+            return getProductsByCategory(category);
+        }
+    } catch (error) {
+        console.error('Failed to get products by category from API:', error);
+        return getProductsByCategory(category);
+    }
+}
+
+// Search products from API
+async function searchProductsFromAPI(query) {
+    try {
+        if (typeof apiService !== 'undefined') {
+            return await apiService.searchProducts(query);
+        } else {
+            // Fallback to local search
+            const searchTerm = query.toLowerCase();
+            return products.filter(product => 
+                product.name.toLowerCase().includes(searchTerm) ||
+                product.description.toLowerCase().includes(searchTerm) ||
+                product.category.toLowerCase().includes(searchTerm)
+            );
+        }
+    } catch (error) {
+        console.error('Failed to search products from API:', error);
+        // Fallback to local search
+        const searchTerm = query.toLowerCase();
+        return products.filter(product => 
+            product.name.toLowerCase().includes(searchTerm) ||
+            product.description.toLowerCase().includes(searchTerm) ||
+            product.category.toLowerCase().includes(searchTerm)
+        );
+    }
+}
+
+// Refresh products from API
+async function refreshProductsFromAPI() {
+    try {
+        if (typeof apiService !== 'undefined') {
+            const apiProducts = await apiService.fetchProducts();
+            products = apiProducts;
+            localStorage.setItem('products', JSON.stringify(products));
+            return products;
+        } else {
+            throw new Error('API service not available');
+        }
+    } catch (error) {
+        console.error('Failed to refresh products from API:', error);
+        throw error;
+    }
+}
+
+// Get featured products from API
+async function getFeaturedProductsFromAPI() {
+    try {
+        if (typeof apiService !== 'undefined') {
+            return await apiService.getFeaturedProducts();
+        } else {
+            return products.filter(product => product.featured);
+        }
+    } catch (error) {
+        console.error('Failed to get featured products from API:', error);
+        return products.filter(product => product.featured);
+    }
+}
+
 // Format price
 function formatPrice(price) {
     return new Intl.NumberFormat('en-US', {
@@ -548,6 +642,10 @@ window.TECHHORA = {
     cart,
     getProductById,
     getProductsByCategory,
+    getProductsByCategoryFromAPI,
+    searchProductsFromAPI,
+    refreshProductsFromAPI,
+    getFeaturedProductsFromAPI,
     formatPrice,
     showNotification,
     showLoading,

@@ -908,3 +908,7 @@ footer {
 .nav-link {
   color: black !important;
 }
+button , a{
+  justify-content: center !important;
+  align-items: center !important;
+}
