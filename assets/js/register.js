@@ -1,4 +1,4 @@
-// Register Page JavaScript for ElectroMart
+// Register Page JavaScript for TECHHORA
 
 // Toggle password visibility
 function togglePassword(fieldId) {

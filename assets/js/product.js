@@ -1,4 +1,4 @@
-// Product Page JavaScript for ElectroMart
+// Product Page JavaScript for TECHHORA
 
 let currentProduct = null;
 let quantity = 1;

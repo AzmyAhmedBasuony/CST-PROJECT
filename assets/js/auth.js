@@ -1,4 +1,4 @@
-// Authentication JavaScript for ElectroMart
+// Authentication JavaScript for TECHHORA
 
 // Sample users for demonstration
 const sampleUsers = [
@@ -119,7 +119,7 @@ function register(userData) {
     
     updateUserInterface();
     
-    showNotification('Registration successful! Welcome to ElectroMart!', 'success');
+    showNotification('Registration successful! Welcome to TECHHORA!', 'success');
     return true;
 }
 

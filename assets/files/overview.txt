@@ -1,5 +1,5 @@
 �� Project Overview
-ElectroMart is a complete multi-actor e-commerce system built with modern web technologies:
+TECHHORA is a complete multi-actor e-commerce system built with modern web technologies:
 Core Technologies Used:
 HTML5 - Semantic markup and modern structure
 CSS3 - Advanced styling with custom properties and animations

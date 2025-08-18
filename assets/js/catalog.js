@@ -1,4 +1,4 @@
-// Catalog JavaScript for ElectroMart
+// Catalog JavaScript for TECHHORA
 
 let filteredProducts = [];
 let currentPage = 1;

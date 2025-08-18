@@ -1,4 +1,4 @@
-// Login Page JavaScript for ElectroMart
+// Login Page JavaScript for TECHHORA
 
 // Toggle password visibility
 function togglePassword() {

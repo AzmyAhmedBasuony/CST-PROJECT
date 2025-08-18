@@ -1,4 +1,4 @@
-// Seller Dashboard JavaScript for ElectroMart
+// Seller Dashboard JavaScript for TECHHORA
 let sellerProducts = [];
 let sellerOrders = [];
 let currentEditingProduct = null;

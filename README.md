@@ -1,4 +1,4 @@
-# ElectroMart - Multi-Actor E-commerce System
+# TECHHORA - Multi-Actor E-commerce System
 
 A comprehensive e-commerce platform built with HTML5, CSS3, JavaScript (ES6), and Bootstrap for electronics retail. The system supports three user roles: Customers, Sellers, and Admins, each with specific functionalities and access levels.
 
@@ -38,7 +38,7 @@ A comprehensive e-commerce platform built with HTML5, CSS3, JavaScript (ES6), an
 ## 📁 Project Structure
 
 ```
-ElectroMart/
+TECHHORA/
 ├── index.html                 # Homepage
 ├── assets/
 │   ├── css/
@@ -292,4 +292,4 @@ For support or questions:
 
 ---
 
-**ElectroMart** - Your trusted source for quality electronics and gadgets! ⚡ 
+**TECHHORA** - Your trusted source for quality electronics and gadgets! ⚡ 

@@ -1,10 +1,12 @@
-/* Main CSS for ElectroMart E-commerce - Modern Design */
+/* Main CSS for TECHHORA E-commerce - Modern Design */
 
 /* Global Styles with Modern Color Palette */
 :root {
   /* Modern Color Palette */
-  --primary-color: #F79976;
-  --primary-dark: #F79976;
+  --primary-color: #f79976;
+  --primary--color-2: #964a2d;
+
+  --primary-dark: #f79976;
   --primary-light: #818cf8;
   --secondary-color: #64748b;
   --accent-color: #f59e0b;
@@ -27,13 +29,13 @@
   --gray-900: #0f172a;
 
   /* Gradients */
-  --gradient-dark: linear-gradient(135deg, #F79976 0%, #9e573e 100%);
-  --gradient-secondary: linear-gradient(135deg, #F79976 0%, #8b7c7c 100%);
+  --gradient-dark: linear-gradient(135deg, #f79976 0%, #9e573e 100%);
+  --gradient-secondary: linear-gradient(135deg, #f79976 0%, #8b7c7c 100%);
   --gradient-dark: linear-gradient(135deg, #b1745e 0%, #9e573e 100%);
   --gradient-dark: linear-gradient(135deg, #b1745e 0%, #9e573e 100%);
-  --gradient-primary: linear-gradient(135deg, #F79976 0%, #fc926c 100%);
-  --gradient-secondary: linear-gradient(135deg, #F79976 0%, #f5576c 100%);
-  --gradient-success: linear-gradient(135deg, #F79976 0%, #00f2fe 100%);
+  --gradient-primary: linear-gradient(135deg, #f79976 0%, #fc926c 100%);
+  --gradient-secondary: linear-gradient(135deg, #f79976 0%, #f5576c 100%);
+  --gradient-success: linear-gradient(135deg, #f79976 0%, #00f2fe 100%);
   --gradient-warning: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
   --gradient-dark: linear-gradient(135deg, #b1745e 0%, #9e573e 100%);
   --gradient-purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -80,7 +82,7 @@ body {
   overflow-x: hidden;
 }
 .bg-primary {
-  background-color: #F79976 !important;
+  background-color: #f79976 !important;
   color: white !important;
 }
 /* Modern Typography */
@@ -188,7 +190,6 @@ h6 {
 .hero-image {
   animation: float 6s ease-in-out infinite;
 }
-
 
 /* Enhanced Category Cards */
 .category-card {
@@ -337,21 +338,18 @@ h6 {
 }
 
 .btn-primary {
-    background-color: #964a2d; 
-    border-color: #301b13;
-    color: #fff;
-   
-    padding: 10px 25px;
-    font-weight: bold;
-  
+  background-color: var(--primary--color-2);
+  border-color: #301b13;
+  color: #fff;
+
+  padding: 10px 25px;
+  font-weight: bold;
 }
 
 .btn-primary:hover {
-    background-color: #e09b7d; 
-    border-color: #523529;
-   
+  background-color: #e09b7d;
+  border-color: var(--primary--color-2);
 }
-
 
 .btn-outline-primary {
   background: transparent;
@@ -414,11 +412,11 @@ h6 {
 
 /* Enhanced Footer */
 footer {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--primary--color-2);
 }
-
 
 .social-links a {
   color: white;
@@ -456,26 +454,23 @@ footer {
   overflow: hidden;
 }
 
-
 /* .card:hover {
   transform: translateY(-5px); 
   box-shadow: var(--shadow-xl); 
 } */
 
-
 .custom-footer {
-    width: 100%;              
-    background-color: #F79976; 
-    padding: 50px 20px;  
-                    
+  width: 100%;
+  background-color: #f79976;
+  padding: 50px 20px;
 }
 
-.card-header{
-  background-color: #F79976;
+.card-header {
+  background-color: #f79976;
 }
 
 .card-headerr {
-background-color: #d07857;
+  background-color: #d07857;
 }
 
 .rounded-cta {
@@ -485,26 +480,21 @@ background-color: #d07857;
   background: var(--gradient-primary);
   color: white;
   max-width: 70%;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
-
-
-
 
 .circular-card {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
-    margin: 10px;
-    border:5px solid;
-    
+  margin: 10px;
+  border: 5px solid;
 }
-
 
 /* Enhanced Alerts */
 .alert {

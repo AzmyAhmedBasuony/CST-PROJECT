@@ -1,4 +1,4 @@
-// Main JavaScript for ElectroMart E-commerce
+// Main JavaScript for TECHHORA E-commerce
 
 // Global variables
 let currentUser = null;
@@ -542,7 +542,7 @@ function setUrlParameter(name, value) {
 }
 
 // Export functions for use in other files
-window.ElectroMart = {
+window.TECHHORA = {
     currentUser,
     products,
     cart,

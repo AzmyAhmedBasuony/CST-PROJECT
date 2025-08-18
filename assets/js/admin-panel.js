@@ -1,4 +1,4 @@
-// Admin Panel JavaScript for ElectroMart
+// Admin Panel JavaScript for TECHHORA
 let allUsers = [];
 let allProducts = [];
 let supportTickets = [];

@@ -1,4 +1,4 @@
-// Cart Page JavaScript for ElectroMart
+// Cart Page JavaScript for TECHHORA
 
 let appliedCoupon = null;
 let shippingCost = 10; // Default standard shipping

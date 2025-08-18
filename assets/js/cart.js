@@ -1,4 +1,4 @@
-// Cart JavaScript for ElectroMart
+// Cart JavaScript for TECHHORA
 
 // Add item to cart
 function addToCart(productId, quantity = 1) {
