@@ -115,7 +115,7 @@ function updateDashboardStats() {
     if (totalUsersElement) totalUsersElement.textContent = allUsers.length;
     if (totalProductsElement) totalProductsElement.textContent = allProducts.length;
     
-    const pendingReviews = allProducts.filter(product => !product.approved).length;
+    const pendingReviews = allProducts.filter(product => !product.approved && !product.rejected).length;
     if (pendingReviewsElement) pendingReviewsElement.textContent = pendingReviews;
     
     const activeSellers = allUsers.filter(user => user.role === 'seller' && user.status !== 'suspended').length;

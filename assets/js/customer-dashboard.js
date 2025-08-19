@@ -238,10 +238,11 @@ function saveProfile() {
     
     // Reload profile data
     loadProfile();
-    
+    initializeCustomerDashboard();
     // Close modal
     const modal = bootstrap.Modal.getInstance(document.getElementById('profileModal'));
     modal.hide();
+
 }
 
 function loadWishlist() {
