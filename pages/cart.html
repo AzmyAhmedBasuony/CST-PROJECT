@@ -8,6 +8,98 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="../assets/css/main.css" rel="stylesheet">
+<style>
+    /* ===== Reset Titles inside Cards ===== */
+.product-card .card-title {
+  color: #000 !important; /* خلي عنوان المنتج أسود واضح */
+  font-weight: bold;
+}
+
+/* ===== زرار Add to Cart ===== */
+.btn-add-cart {
+  background: linear-gradient(45deg, #ff7e5f, #feb47b); /* برتقالي + أصفر */
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  border-radius: 8px;
+}
+
+.btn-add-cart:hover {
+  background: linear-gradient(135deg, #feb47b, #ff7e5f);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ===== زرار View Details ===== */
+.btn-view-details {
+  background: white;
+  border: 1px solid #f7a761;
+  color: #f7a761;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  border-radius: 8px;
+}
+
+.btn-view-details:hover {
+  background: linear-gradient(45deg, #fb8a8e, #e6ac9c, #fcb5a2);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.custom-btn {
+    border-radius: 10px;   /* يخلي الزرار مدوّر شوية */
+    font-weight: bold;     /* الخط عريض */
+    padding: 12px;         /* مساحة داخلية أكبر */
+    transition: 0.3s ease-in-out;
+}
+
+.custom-btn:hover {
+    transform: scale(1.05);   /* يكبر شوية عند الـ hover */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* زرار Add to Cart */
+.btn-add-cart {
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.btn-add-cart:hover {
+  background: linear-gradient(135deg, #feb47b, #ff7e5f);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* زرار View Details */
+.btn-view-details {
+  background: white;
+  border: 1px solid #f7a761;
+  color: #f7a761;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.btn-view-details:hover {
+  background: linear-gradient(45deg, #fb8a8e, #e6ac9c, #fcb5a2);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* الكروت */
+.cart-item {
+  transition: all 0.3s ease;
+}
+.cart-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+</style>
 </head>
 <body>
     <!-- Enhanced Navigation -->
@@ -204,7 +296,7 @@
     <!-- Related Products -->
     <section class="py-5 bg-light">
         <div class="container">
-            <h3 class="text-center mb-4">You Might Also Like</h3>
+            <h3 class="text-center mb-4" style="color: #000 !important;">You Might Also Like</h3>
             <div class="row g-4" id="related-products">
                 <!-- Related products will be loaded dynamically -->
             </div>

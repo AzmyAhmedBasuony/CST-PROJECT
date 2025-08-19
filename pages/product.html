@@ -8,6 +8,141 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="../assets/css/main.css" rel="stylesheet">
+<style>
+    .custom-breadcrumb .breadcrumb-item,
+.custom-breadcrumb .breadcrumb-item a,
+.custom-breadcrumb .breadcrumb-item.active {
+  display: inline-flex; /* يخلي كل العناصر في نفس المستوى */
+  align-items: center; /* يضمن إن الأيقونة والنص في المنتصف */
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4; /* توحيد الارتفاع */
+  vertical-align: middle; /* محاذاة العناصر */
+}
+
+
+    /* Breadcrumb Styling */
+.custom-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.8rem 1rem;
+  margin: 0;
+  list-style: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.custom-breadcrumb .breadcrumb-item {
+  margin-right: 8px;
+}
+
+.custom-breadcrumb .breadcrumb-item a {
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #dcdcdc;
+  background: linear-gradient(135deg, #f9f9f9, #e6e6e6);
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.7), 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.custom-breadcrumb .breadcrumb-item a:hover {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border-color: #2575fc;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(37,117,252,0.3);
+}
+
+.custom-breadcrumb .breadcrumb-item.active {
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  color: #fff;
+  font-weight: 600;
+  border: 1px solid #2575fc;
+  box-shadow: 0 3px 8px rgba(37,117,252,0.3);
+}
+
+  .product-title {
+  color: #333; /* لون غامق */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.btn-add-cart {
+  background: linear-gradient(45deg, #ff7e5f, #feb47b); /* برتقالي + أصفر */
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  border-radius: 8px;
+}
+
+.btn-add-cart:hover {
+  background: linear-gradient(135deg, #feb47b, #ff7e5f);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ===== زرار Buy Now ===== */
+.btn-buy-now {
+  background: white;
+  border: 1px solid #f7a761;
+  color: #f7a761;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  border-radius: 8px;
+}
+
+.btn-buy-now:hover {
+  background: linear-gradient(45deg, #fb8a8e, #e6ac9c, #fcb5a2);
+  color: #fff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ===== زرار Add to Cart ===== */
+.btn-add-cart {
+  background: linear-gradient(45deg, #ff7e5f, #feb47b); /* برتقالي + أصفر */
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  border-radius: 8px;
+}
+
+.btn-add-cart:hover {
+  background: linear-gradient(135deg, #feb47b, #ff7e5f);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ===== زرار View Details ===== */
+.btn-view-details {
+  background: white;
+  border: 1px solid #f7a761;
+  color: #f7a761;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  border-radius: 8px;
+}
+
+.btn-view-details:hover {
+  background: linear-gradient(45deg, #fb8a8e, #e6ac9c, #fcb5a2);
+  color: #fff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+</style>
 </head>
 <body>
     <!-- Enhanced Navigation -->

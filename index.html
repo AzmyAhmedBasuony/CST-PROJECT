@@ -17,6 +17,47 @@
       rel="stylesheet"
     />
     <link href="assets/css/main.css" rel="stylesheet" />
+
+    <style>
+      /* ===== Reset Titles inside Cards ===== */
+.product-card .card-title {
+  color: #000 !important; /* خلي عنوان المنتج أسود واضح */
+  font-weight: bold;
+}
+
+/* ===== زرار Add to Cart ===== */
+.btn-add-cart {
+  background: linear-gradient(45deg, #ff7e5f, #feb47b); /* برتقالي + أصفر */
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  border-radius: 8px;
+}
+
+.btn-add-cart:hover {
+  background: linear-gradient(135deg, #feb47b, #ff7e5f);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ===== زرار View Details ===== */
+.btn-view-details {
+  background: white;
+  border: 1px solid #f7a761;
+  color: #f7a761;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  border-radius: 8px;
+}
+
+.btn-view-details:hover {
+  background: linear-gradient(45deg, #fb8a8e, #e6ac9c, #fcb5a2);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+    </style>
   </head>
   <body>
     <!-- Enhanced Navigation -->
@@ -180,10 +221,10 @@
         <div class="row g-4">
           <div class="col-md-4">
             <div class="category-card text-center hover-lift">
-              <div class="category-icon mb-3">
-                <i class="fas fa-mobile-alt fa-1x"></i>
-                <i class="fas fa- fa-laptop fa-1x"></i>
-                <i class="fas fa- fa-headphones fa-1x"></i>
+              <div class="category-icon mb-4">
+                <i class="fas fa-mobile-alt fa-2x"></i>
+                <i class="fas fa- fa-laptop fa-2x"></i>
+                <i class="fas fa- fa-headphones fa-2x"></i>
 
               </div>
               <h5 class="mb-3 text-black">Electronics</h5>
@@ -201,7 +242,7 @@
           <div class="col-md-4">
             <div class="category-card text-center hover-lift">
               <div class="category-icon mb-3">
-                <i class="fa fa-female fa-3x"></i>
+                <i class="fa fa-female fa-2x"></i>
               </div>
               <h5 class="mb-3 text-black">Clothing</h5>
               <p class="text-muted mb-3">
@@ -218,7 +259,7 @@
           <div class="col-md-4">
             <div class="category-card text-center hover-lift">
               <div class="category-icon mb-3">
-                <i class="fa fa-diamond fa-3x"></i>
+                <i class="fa fa-diamond fa-2x"></i>
               </div>
               <h5 class="mb-3 text-black">Jewelery</h5>
               <p class="text-muted mb-3">

@@ -419,6 +419,7 @@ function saveProduct() {
     };
 
     const allProducts = JSON.parse(localStorage.getItem("products") || "[]");
+    debugger
     allProducts.push(newProduct);
     localStorage.setItem("products", JSON.stringify(allProducts));
 
