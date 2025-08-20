@@ -4,6 +4,7 @@ let sellerOrders = [];
 let currentEditingProduct = null;
 let salesChart = null;
 let productsChart = null;
+let activeOrderId = "";
 
 document.addEventListener("DOMContentLoaded", function () {
   if (window.location.pathname.includes("seller.html")) {
@@ -43,30 +44,34 @@ function loadSellerData() {
   console.log("orders Items = ", orders);
 
   // Map orders to sellerOrders format
-  sellerOrders = orders.map((order) => ({
-    id: order.id,
-    customer: order.customer.name,
-    customerEmail: order.customer.email,
-    products: order.items.map((item) => ({
-      id: item.id,
-      name: item.name,
-      quantity: item.quantity,
-      price: item.price,
-    })),
-    total: order.total,
-    date: order.createdAt
-      ? new Date(order.createdAt).toISOString().split("T")[0]
-      : new Date().toISOString().split("T")[0],
-    status: order.status,
-    shippingAddress: `${order.shipping.address}, ${
-      order.shipping.city || ""
-    }, ${order.shipping.state || ""} ${order.shipping.zipCode || ""}`.trim(),
-    createdAt: order.createdAt,
-    notes: order.notes,
-    payment: order.payment,
-    shipping: order.shipping,
-    shippingMethod: order.shippingMethod,
-  }));
+  if (localStorage.getItem("sellerOrders")) {
+    sellerOrders = JSON.parse(localStorage.getItem("sellerOrders"));
+  } else {
+    sellerOrders = orders.map((order) => ({
+      id: order.id,
+      customer: order.customer.name,
+      customerEmail: order.customer.email,
+      products: order.items.map((item) => ({
+        id: item.id,
+        name: item.name,
+        quantity: item.quantity,
+        price: item.price,
+      })),
+      total: order.total,
+      date: order.createdAt
+        ? new Date(order.createdAt).toISOString().split("T")[0]
+        : new Date().toISOString().split("T")[0],
+      status: order.status,
+      shippingAddress: `${order.shipping.address}, ${
+        order.shipping.city || ""
+      }, ${order.shipping.state || ""} ${order.shipping.zipCode || ""}`.trim(),
+      createdAt: order.createdAt,
+      notes: order.notes,
+      payment: order.payment,
+      shipping: order.shipping,
+      shippingMethod: order.shippingMethod,
+    }));
+  }
 
   // If no orders exist, create sample orders for demo
   if (sellerOrders.length === 0) {
@@ -459,8 +464,9 @@ function deleteProduct(productId) {
   updateDashboardStats();
   loadProductsTable();
 }
-
 function viewOrderDetails(orderId) {
+  activeOrderId = orderId;
+  orderId = orderId;
   const order = sellerOrders.find((o) => o.id === orderId);
   if (!order) {
     showNotification("Order not found.", "error");
@@ -554,9 +560,7 @@ function viewOrderDetails(orderId) {
 }
 
 function updateOrderStatus() {
-  const orderId = document
-    .querySelector("#order-details")
-    .getAttribute("data-order-id");
+  const orderId = activeOrderId;
   const newStatus = document.getElementById("order-status").value;
 
   const orderIndex = sellerOrders.findIndex((o) => o.id === orderId);
