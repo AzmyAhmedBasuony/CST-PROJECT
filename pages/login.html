@@ -8,6 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="../assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/Login.css">
 </head>
 <body>
     <!-- Enhanced Navigation -->
@@ -77,193 +78,223 @@
         </div>
     </nav>
 
-    <!-- Login Section -->
-    <section class="py-5 mt-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-5">
-                    <div class="card shadow">
-                        <div class="card-header bg-primary text-white text-center">
-                            <h4 class="mb-0">
-                                <i class="fas fa-sign-in-alt"></i> Login to TECHHORA
-                            </h4>
-                        </div>
-                        <div class="card-body p-4">
-                            <form id="login-form" onsubmit="handleLoginForm(event)">
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email Address</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text">
-                                            <i class="fas fa-envelope"></i>
-                                        </span>
-                                        <input type="email" class="form-control" id="email" name="email" required>
-                                    </div>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="password" class="form-label">Password</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text">
-                                            <i class="fas fa-lock"></i>
-                                        </span>
-                                        <input type="password" class="form-control" id="password" name="password" required>
-                                        <button class="btn btn-outline-secondary" type="button" onclick="togglePassword()">
-                                            <i class="fas fa-eye" id="password-toggle-icon"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                
-                                <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="remember-me">
-                                    <label class="form-check-label" for="remember-me">
-                                        Remember me
-                                    </label>
-                                </div>
-                                
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-primary btn-lg">
-                                        <i class="fas fa-sign-in-alt"></i> Login
-                                    </button>
-                                </div>
-                            </form>
-                            
-                            <hr class="my-4">
-                            
-                            <div class="text-center">
-                                <p class="mb-2">Don't have an account?</p>
-                                <a href="register.html" class="btn btn-outline-primary">
-                                    <i class="fas fa-user-plus"></i> Create Account
-                                </a>
-                            </div>
-                            
-                            <div class="text-center mt-3">
-                                <a href="forgot-password.html" class="text-muted">
-                                    <i class="fas fa-key"></i> Forgot Password?
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Demo Accounts -->
-                    <div class="card mt-4">
-                        <div class="card-header">
-                            <h6 class="mb-0">Demo Accounts</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="fillDemoAccount('customer')">
-                                        Customer
-                                    </button>
-                                </div>
-                                <div class="col-md-4">
-                                    <button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="fillDemoAccount('seller')">
-                                        Seller
-                                    </button>
-                                </div>
-                                <div class="col-md-4">
-                                    <button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="fillDemoAccount('admin')">
-                                        Admin
-                                    </button>
-                                </div>
-                            </div>
-                            <small class="text-muted">All demo accounts use password: password123</small>
-                        </div>
-                    </div>
-                </div>
+  <!-- Login Section -->
+<section class="py-5 mt-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+          <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+            <!-- Header -->
+            <div class="card-header text-center text-white p-4" 
+                 style="background: linear-gradient(45deg, #ff7e5f, #feb47b);">
+              <h3 class="mb-0 fw-bold">
+                <i class="fas fa-sign-in-alt"></i> Login to <span class="fw-bolder">TECHHORA</span>
+              </h3>
             </div>
+  
+            <!-- Body -->
+            <div class="card-body p-5">
+              <form id="login-form" onsubmit="handleLoginForm(event)">
+                <!-- Email -->
+                <div class="mb-4">
+                  <label for="email" class="form-label fw-semibold">Email Address</label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-light">
+                      <i class="fas fa-envelope text-muted"></i>
+                    </span>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                  </div>
+                </div>
+  
+                <!-- Password -->
+                <div class="mb-4">
+                  <label for="password" class="form-label fw-semibold">Password</label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-light">
+                      <i class="fas fa-lock text-muted"></i>
+                    </span>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                    <button class="btn btn-password-toggle" type="button" onclick="togglePassword()">
+                        <i class="fas fa-eye" id="password-toggle-icon"></i>
+                      </button>
+                  </div>
+                </div>
+  
+                <!-- Remember Me -->
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="remember-me">
+                  <label class="form-check-label" for="remember-me">Remember me</label>
+                </div>
+  
+                <!-- Login Button -->
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-add-cart btn-lg">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                  </button>
+                </div>
+              </form>
+  
+              <hr class="my-4">
+  
+              <!-- Register & Forgot -->
+              <div class="text-center">
+                <p class="mb-2">Don't have an account?</p>
+                <a href="register.html" class="btn btn-view-details">
+                  <i class="fas fa-user-plus"></i> Create Account
+                </a>
+              </div>
+  
+              <div class="text-center mt-3">
+                <a href="forgot-password.html" class="text-muted fw-semibold">
+                  <i class="fas fa-key"></i> Forgot Password?
+                </a>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Demo Accounts -->
+          <div class="card mt-4 border-0 shadow-sm rounded-4">
+            <div class="card-header demo-header">
+                <h6 class="mb-0 fw-bold">Demo Accounts</h6>
+              </div>
+            <div class="card-body">
+              <div class="row text-center">
+                <div class="col-md-4 mb-2">
+                  <button class="btn btn-view-details w-100 btn-sm" onclick="fillDemoAccount('customer')">
+                    Customer
+                  </button>
+                </div>
+                <div class="col-md-4 mb-2">
+                  <button class="btn btn-view-details w-100 btn-sm" onclick="fillDemoAccount('seller')">
+                    Seller
+                  </button>
+                </div>
+                <div class="col-md-4 mb-2">
+                  <button class="btn btn-view-details w-100 btn-sm" onclick="fillDemoAccount('admin')">
+                    Admin
+                  </button>
+                </div>
+              </div>
+              <small class="text-muted">All demo accounts use password: <b>password123</b></small>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Features Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
-                            <h5>Secure Login</h5>
-                            <p class="text-muted">Your account is protected with industry-standard security measures.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <i class="fas fa-shopping-bag fa-3x text-primary mb-3"></i>
-                            <h5>Track Orders</h5>
-                            <p class="text-muted">Access your order history and track current shipments.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <i class="fas fa-heart fa-3x text-primary mb-3"></i>
-                            <h5>Wishlist</h5>
-                            <p class="text-muted">Save your favorite products for later purchase.</p>
-                        </div>
-                    </div>
-                </div>
+ <!-- Features Section -->
+<section class="py-5" style="background: #fff7f3;"> <!-- خلفية فاتحة مائلة للبرتقالي -->
+    <div class="container">
+      <div class="row text-center">
+        
+        <!-- Feature 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 border-0 shadow-sm feature-card">
+            <div class="card-body p-4">
+              <div class="icon-box mb-3">
+                <i class="fas fa-shield-alt fa-2x"></i>
+              </div>
+              <h5 class="fw-bold">Secure Login</h5>
+              <p class="text-muted">Your account is protected with industry-standard security measures.</p>
             </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="../assets/images/logo-footer.jpg" width="110px" height="100px"  alt="TECHHORA" class="img-fluid">
-                    <p>Your trusted source for quality electronics and gadgets.</p>
-                    <div class="social-links">
-                        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <h6>Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="catalog.html" class="text-white-50">Products</a></li>
-                        <li><a href="about.html" class="text-white-50">About Us</a></li>
-                        <li><a href="contact.html" class="text-white-50">Contact</a></li>
-                        <li><a href="faq.html" class="text-white-50">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h6>Customer Service</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="shipping.html" class="text-white-50">Shipping Info</a></li>
-                        <li><a href="returns.html" class="text-white-50">Returns</a></li>
-                        <li><a href="warranty.html" class="text-white-50">Warranty</a></li>
-                        <li><a href="support.html" class="text-white-50">Support</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h6>Newsletter</h6>
-                    <p>Subscribe for updates and exclusive offers!</p>
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Your email">
-                        <button class="btn btn-primary" type="button">Subscribe</button>
-                    </div>
-                </div>
+  
+        <!-- Feature 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 border-0 shadow-sm feature-card">
+            <div class="card-body p-4">
+              <div class="icon-box mb-3">
+                <i class="fas fa-shopping-bag fa-2x"></i>
+              </div>
+              <h5 class="fw-bold">Track Orders</h5>
+              <p class="text-muted">Access your order history and track current shipments.</p>
             </div>
-            <hr class="my-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2025 TECHHORA. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <a href="privacy.html" class="text-white-50 me-3">Privacy Policy</a>
-                    <a href="terms.html" class="text-white-50">Terms of Service</a>
-                </div>
-            </div>
+          </div>
         </div>
-    </footer>
+  
+        <!-- Feature 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 border-0 shadow-sm feature-card">
+            <div class="card-body p-4">
+              <div class="icon-box mb-3">
+                <i class="fas fa-heart fa-2x"></i>
+              </div>
+              <h5 class="fw-bold">Wishlist</h5>
+              <p class="text-muted">Save your favorite products for later purchase.</p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
 
+<!-- Footer -->
+<footer class="footer-custom text-white pt-5 pb-4">
+    <div class="container">
+      <div class="row gy-4">
+        
+        <!-- Logo & About -->
+        <div class="col-md-4">
+          <img src="../assets/images/logo-footer.jpg" width="120px" height="100px" alt="TECHHORA" class="img-fluid mb-3 rounded-3 shadow-sm">
+          <p class="text-light">Your trusted source for quality electronics and gadgets.</p>
+          <div class="social-links mt-3">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+  
+        <!-- Quick Links -->
+        <div class="col-md-2">
+          <h6 class="footer-title">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="catalog.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+  
+        <!-- Customer Service -->
+        <div class="col-md-3">
+          <h6 class="footer-title">Customer Service</h6>
+          <ul class="list-unstyled">
+            <li><a href="shipping.html">Shipping Info</a></li>
+            <li><a href="returns.html">Returns</a></li>
+            <li><a href="warranty.html">Warranty</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </div>
+  
+        <!-- Newsletter -->
+        <div class="col-md-3">
+          <h6 class="footer-title">Newsletter</h6>
+          <p class="text-light">Subscribe for updates and exclusive offers!</p>
+          <div class="input-group">
+            <input type="email" class="form-control rounded-start" placeholder="Your email">
+            <button class="btn btn-add-cart" type="button">Subscribe</button>
+          </div>
+        </div>
+  
+      </div>
+  
+      <hr class="my-4 border-light">
+  
+      <div class="row">
+        <div class="col-md-6">
+          <p class="mb-0 text-light">&copy; 2025 <b>TECHHORA</b>. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="privacy.html" class="footer-link me-3">Privacy Policy</a>
+          <a href="terms.html" class="footer-link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/auth.js"></script>
