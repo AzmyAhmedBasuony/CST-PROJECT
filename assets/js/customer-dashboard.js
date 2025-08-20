@@ -77,7 +77,7 @@ function loadOrders() {
             <div class="card-body">
                 <div class="row align-items-center">
                     <div class="col-md-3">
-                        <h6 class="mb-1">Order #${order.id}</h6>
+                        <h6 class="mb-1" style="color: #000 !important;">Order #${order.id}</h6>
                         <small class="text-muted">${new Date(order.createdAt).toLocaleDateString()}</small>
                     </div>
                     <div class="col-md-3">

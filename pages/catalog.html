@@ -17,46 +17,8 @@
       rel="stylesheet"
     />
     <link href="../assets/css/main.css" rel="stylesheet" />
-    <style>
-      /* ===== Reset Titles inside Cards ===== */
-      .product-card .card-title {
-        color: #000 !important; /* خلي عنوان المنتج أسود واضح */
-        font-weight: bold;
-      }
-      
-      /* ===== زرار Add to Cart ===== */
-      .btn-add-cart {
-        background: linear-gradient(45deg, #ff7e5f, #feb47b); /* برتقالي + أصفر */
-        border: none;
-        color: #ffffff;
-        font-weight: bold;
-        transition: all 0.4s ease;
-        border-radius: 8px;
-      }
-      
-      .btn-add-cart:hover {
-        background: linear-gradient(135deg, #feb47b, #ff7e5f);
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      }
-      
-      /* ===== زرار View Details ===== */
-      .btn-view-details {
-        background: white;/* بنفسجي + أزرق */
-  border: 1px solid #f7a761 ;
-  color: #f7a761;
-  font-weight: bold;
-  transition: all 0.4s ease;
-  border-radius: 8px;
-}
+    <link rel="stylesheet" href="/assets/css/catalog.css">
 
-.btn-view-details:hover {
-  background: linear-gradient(45deg, #fb8a8e, #e6ac9c, #fcb5a2);
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-      </style>
   </head>
 
   <body>
@@ -359,7 +321,7 @@
           <!-- Products Grid -->
           <div class="col-lg-9">
             <div class="d-flex justify-content-between align-items-center mb-4">
-              <h5 id="product-count">Showing 0 products</h5>
+              <h5 id="product-count" style="color: #000 !important;">Showing 0 products</h5>
               <div class="btn-group" role="group">
                 <button
                   type="button"
