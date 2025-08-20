@@ -192,20 +192,21 @@ function displayGridProducts(productsToShow, container) {
             <div class="card product-card h-100">
                 <img src="${product.image}" class="card-img-top" alt="${product.name}" onerror="this.src='../assets/images/placeholder.jpg'">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">${product.name}</h5>
-                    <p class="card-text text-muted">${product.description.substring(0, 80)}...</p>
+                    <h5 class="card-title" style="color: black !important;">${product.name.substring(0,20)}</h5>
+                    <p class="card-text text-muted">${product.description.substring(0, 50)}...</p>
                     <div class="product-rating mb-2">
                         ${generateStarRating(product.rating)}
                         <small class="text-muted">(${product.rating})</small>
                     </div>
                     <div class="product-price mb-3">EGP ${product.price.toFixed(2)}</div>
                     <div class="mt-auto">
-                        <button class="btn btn-primary w-100 mb-2" onclick="addToCart(${product.id})">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                        <a href="product.html?id=${product.id}" class="btn btn-outline-primary w-100">
-                            View Details
-                        </a>
+                    <button class="btn btn-add-cart w-100 mb-2" onclick="addToCart(${product.id})">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <a href="product.html?id=${product.id}" class="btn btn-view-details w-100">
+                                    View Details
+                                </a>
+                
                     </div>
                 </div>
             </div>
@@ -227,7 +228,7 @@ function displayListProducts(productsToShow, container) {
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-8">
-                                    <h5 class="card-title">${product.name}</h5>
+                                    <h5 class="card-title" style="color: black !important;">${product.name}</h5>
                                     <p class="card-text">${product.description}</p>
                                     <div class="product-rating mb-2">
                                         ${generateStarRating(product.rating)}
@@ -240,12 +241,13 @@ function displayListProducts(productsToShow, container) {
                                 </div>
                                 <div class="col-md-4 text-end">
                                     <div class="product-price mb-3">EGP ${product.price.toFixed(2)}</div>
-                                    <button class="btn btn-primary mb-2" onclick="addToCart(${product.id})">
-                                        <i class="fas fa-shopping-cart"></i> Add to Cart
-                                    </button>
-                                    <a href="product.html?id=${product.id}" class="btn btn-outline-primary">
-                                        View Details
-                                    </a>
+                                    <button class="btn btn-add-cart w-100 mb-2" onclick="addToCart(${product.id})">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <a href="product.html?id=${product.id}" class="btn btn-view-details w-100">
+                                    View Details
+                                </a>
+                                
                                 </div>
                             </div>
                         </div>

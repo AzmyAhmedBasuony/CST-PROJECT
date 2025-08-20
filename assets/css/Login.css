@@ -1,0 +1,147 @@
+
+/* زرار Login */
+.btn-add-cart {
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  border-radius: 8px;
+}
+.btn-add-cart:hover {
+  background: linear-gradient(135deg, #feb47b, #ff7e5f);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* زرار Create Account + Demo */
+.btn-view-details {
+  background: white;
+  border: 1px solid #f7a761;
+  color: #f7a761;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  border-radius: 8px;
+}
+.btn-view-details:hover {
+  background: linear-gradient(45deg, #fb8a8e, #e6ac9c, #fcb5a2);
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-password-toggle {
+background: #f7a761; /* برتقالي فاتح */
+border: none;
+color: #fff;
+border-radius: 6px;
+transition: all 0.3s ease;
+}
+
+.btn-password-toggle:hover {
+background: linear-gradient(45deg, #ff7e5f, #feb47b);
+transform: translateY(-2px) scale(1.05);
+box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+color: #fff;
+}
+
+.demo-header {
+background: linear-gradient(45deg, #ff7e5f, #feb47b); /* نفس ألوان الزرار */
+color: #fff; /* النص أبيض */
+text-align: center;
+padding: 12px;
+border-radius: 8px 8px 0 0; /* زوايا ناعمة */
+}
+
+.demo-header h6 {
+margin: 0;
+font-weight: bold;
+font-size: 1rem;
+letter-spacing: 0.5px;
+}
+
+/* Feature Cards */
+.feature-card {
+border-radius: 16px;
+transition: all 0.4s ease;
+}
+
+.feature-card:hover {
+transform: translateY(-6px) scale(1.02);
+box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Icon Box */
+.icon-box {
+width: 70px;
+height: 70px;
+margin: 0 auto;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+background: linear-gradient(45deg, #ff7e5f, #feb47b);
+color: #fff;
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.icon-box i {
+font-size: 28px;
+}
+
+/* Texts */
+.feature-card h5 {
+color: #ff7e5f; /* عنوان بنفس ألوان الثيم */
+}
+
+/* Footer Styling */
+.footer-custom {
+background: linear-gradient(45deg, #2c2c2c, #1a1a1a); /* أسود أنيق بتدرج */
+}
+
+.footer-title {
+color: #feb47b; /* عناوين بالألوان البرتقالية */
+font-weight: bold;
+margin-bottom: 1rem;
+}
+
+.footer-custom ul li a {
+color: #ffffffb3; /* أبيض شفاف */
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+.footer-custom ul li a:hover {
+color: #ff7e5f; /* لون برتقالي عند الـ Hover */
+padding-left: 5px;
+}
+
+/* Social Icons */
+.social-icon {
+display: inline-block;
+width: 40px;
+height: 40px;
+margin-right: 10px;
+border-radius: 50%;
+background: linear-gradient(45deg, #ff7e5f, #feb47b);
+color: white;
+text-align: center;
+line-height: 40px;
+transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+transform: translateY(-3px) scale(1.1);
+box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Footer Links */
+.footer-link {
+color: #ffffffb3;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+color: #feb47b;
+}

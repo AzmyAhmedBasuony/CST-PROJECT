@@ -287,7 +287,8 @@ function loadFeaturedProducts() {
   if (!featuredContainer) return;
 
   const featuredProducts = products.filter((product) => product.featured);
-  const productsToShow = featuredProducts.slice(0, 8); // Show only 4 featured products
+  const productsToShow = featuredProducts.slice(0, 8); // Show up to 8 featured products
+
   setTimeout(() => {
     featuredContainer.innerHTML = productsToShow
       .map(
@@ -298,27 +299,31 @@ function loadFeaturedProducts() {
           product.name
         }" onerror="this.src='assets/images/placeholder.jpg'">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">${product.name}</h5>
-                    <p class="card-text text-muted">${product.description.substring(
-                      0,
-                      60
-                    )}...</p>
+                    <!-- عنوان المنتج -->
+                    <h5 class="card-title">${product.name.substring(0,40)}...</h5>
+                    
+                    <!-- الوصف -->
+                    <p class="card-text text-muted">
+                      ${product.description.substring(0, 60)}...
+                    </p>
+                    
+                    <!-- التقييم -->
                     <div class="product-rating mb-2">
                         ${generateStarRating(product.rating)}
                         <small class="text-muted">(${product.rating})</small>
                     </div>
-                    <div class="product-price mb-3">$${product.price.toFixed(
-                      2
-                    )}</div>
+                    
+                    <!-- السعر -->
+                    <div class="product-price mb-3">
+                      $${product.price.toFixed(2)}
+                    </div>
+                    
+                    <!-- الأزرار -->
                     <div class="mt-auto">
-                        <button class="btn btn-primary w-100 mb-2" onclick="addToCart(${
-                          product.id
-                        })">
+                        <button class="btn btn-add-cart w-100 mb-2" onclick="addToCart(${product.id})">
                             <i class="fas fa-shopping-cart"></i> Add to Cart
                         </button>
-                        <a href="pages/product.html?id=${
-                          product.id
-                        }" class="btn btn-outline-primary w-100">
+                        <a href="pages/product.html?id=${product.id}" class="btn btn-view-details w-100">
                             View Details
                         </a>
                     </div>

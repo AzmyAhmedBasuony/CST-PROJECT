@@ -1,0 +1,188 @@
+/* ===================== Auth Pages Styling ===================== */
+
+/* ---------------- Card Header ---------------- */
+.auth-card-header {
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .auth-card-header h4,
+  .auth-card-header h6 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+  }
+  
+  /* ---------------- Input Fields ---------------- */
+  .form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #ff7e5f;
+    box-shadow: 0 0 6px rgba(255, 126, 95, 0.4);
+  }
+  
+  /* ---------------- Password Toggle ---------------- */
+  .btn-password-toggle {
+    background: #f7a761;
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-password-toggle:hover {
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    color: #fff;
+  }
+  
+  /* ---------------- Main Buttons ---------------- */
+  .btn-primary {
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    border: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    color: #0b0b0b !important;
+  }
+  
+  /* ---------------- Outline Buttons ---------------- */
+  .btn-outline-primary {
+    background: white; /* خلفية بيضاء */
+    border: 1px solid #f7a761; /* خط برتقالي */
+    color: #f7a761; /* نص برتقالي */
+    font-weight: bold;
+    border-radius: 8px; /* زوايا ناعمة */
+    transition: all 0.4s ease;
+}
+
+.btn-outline-primary:hover {
+    background: linear-gradient(45deg, #fb8a8e, #e6ac9c, #fcb5a2); /* Gradient عند hover */
+    color: white; /* النص أبيض */
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+  
+  /* ---------------- Demo Accounts Card Header ---------------- */
+  .demo-header {
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .demo-header h6 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+  }
+ /* Feature Cards */
+.feature-card {
+    border-radius: 16px;
+    transition: all 0.4s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  }
+  
+  /* Icon Box */
+  .icon-box {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px auto; /* مسافة تحت الأيقونة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  
+  .icon-box i {
+    font-size: 28px;
+  }
+  
+  /* Card Titles */
+  .feature-card h5 {
+    color: #ff7e5f; /* نفس ألوان الثيم */
+    font-weight: 600;
+  }
+  
+  /* ---------------- Footer Styling ---------------- */
+  .footer-custom {
+    background: linear-gradient(45deg, #2c2c2c, #1a1a1a);
+    color: #fff;
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+  
+  .footer-title {
+    color: #feb47b;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-custom ul li a {
+    color: #ffffffb3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-custom ul li a:hover {
+    color: #ff7e5f;
+    padding-left: 5px;
+  }
+  
+  /* ---------------- Social Icons ---------------- */
+  .social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    transition: all 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  
+  /* ---------------- Footer Links ---------------- */
+  .footer-link {
+    color: #ffffffb3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: #feb47b;
+  }
+  
+  /* ===================== End Auth Pages Styling ===================== */
+  

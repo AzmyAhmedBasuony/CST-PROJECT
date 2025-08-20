@@ -17,6 +17,8 @@
       rel="stylesheet"
     />
     <link href="assets/css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/index.css">
+
   </head>
   <body>
     <!-- Enhanced Navigation -->
@@ -172,7 +174,7 @@
     <section class="py-5 bg-light">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="gradient-text mb-3">Shop by Category</h2>
+          <h2 class="text-center fw-bold mb-3" style="color:#ff7e5f;" >Shop by Category</h2>
           <p class="text-muted">
             Explore our curated collection of premium electronics
           </p>
@@ -180,10 +182,10 @@
         <div class="row g-4">
           <div class="col-md-4">
             <div class="category-card text-center hover-lift">
-              <div class="category-icon mb-3">
-                <i class="fas fa-mobile-alt fa-1x"></i>
-                <i class="fas fa- fa-laptop fa-1x"></i>
-                <i class="fas fa- fa-headphones fa-1x"></i>
+              <div class="category-icon mb-4">
+                <i class="fas fa-mobile-alt fa-2x"></i>
+                <i class="fas fa- fa-laptop fa-2x"></i>
+                <i class="fas fa- fa-headphones fa-2x"></i>
 
               </div>
               <h5 class="mb-3 text-black">Electronics</h5>
@@ -201,7 +203,7 @@
           <div class="col-md-4">
             <div class="category-card text-center hover-lift">
               <div class="category-icon mb-3">
-                <i class="fa fa-female fa-3x"></i>
+                <i class="fa fa-female fa-2x"></i>
               </div>
               <h5 class="mb-3 text-black">Clothing</h5>
               <p class="text-muted mb-3">
@@ -218,7 +220,7 @@
           <div class="col-md-4">
             <div class="category-card text-center hover-lift">
               <div class="category-icon mb-3">
-                <i class="fa fa-diamond fa-3x"></i>
+                <i class="fa fa-diamond fa-2x"></i>
               </div>
               <h5 class="mb-3 text-black">Jewelery</h5>
               <p class="text-muted mb-3">
@@ -240,7 +242,7 @@
     <section class="py-5">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="gradient-text mb-3">Featured Products</h2>
+          <h2 class="text-center fw-bold mb-3" style="color:#ff7e5f;">Featured Products</h2>
           <p class="text-muted">Handpicked products for tech enthusiasts</p>
         </div>
         <div class="row g-4" id="featured-products">
@@ -257,67 +259,55 @@
       </div>
     </section>
 
-    <!-- Enhanced Features Section -->
-    <section class="py-5 bg-light">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="gradient-text mb-3">Why Choose TECHHORA?</h2>
-          <p class="text-muted">
-            We're committed to providing the best shopping experience
-          </p>
-        </div>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div
-              class="card border-0 shadow-custom hover-lift text-center h-100"
-            >
-              <div class="card-body p-4">
-                <div class="mb-3">
-                  <i class="fas fa-shipping-fast fa-3x gradient-text"></i>
-                </div>
-                <h5 class="card-title">Fast Shipping</h5>
-                <p class="card-text text-muted">
-                  Free shipping on orders over $50. Get your products delivered
-                  within 2-3 business days.
-                </p>
-              </div>
+<!-- Benefits -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h3 class="text-center fw-bold mb-5" style="color:#ff7e5f;">Why Join TECHHORA?</h3>
+    <div class="row text-center">
+      
+      <!-- Easy Shopping -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm feature-card">
+          <div class="card-body">
+            <div class="icon-box mb-3">
+              <i class="fas fa-shopping-cart"></i>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card border-0 shadow-custom hover-lift text-center h-100"
-            >
-              <div class="card-body p-4">
-                <div class="mb-3">
-                  <i class="fas fa-shield-alt fa-3x gradient-text"></i>
-                </div>
-                <h5 class="card-title">Secure Payments</h5>
-                <p class="card-text text-muted">
-                  Your payment information is protected with bank-level security
-                  encryption.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card border-0 shadow-custom hover-lift text-center h-100"
-            >
-              <div class="card-body p-4">
-                <div class="mb-3">
-                  <i class="fas fa-headset fa-3x gradient-text"></i>
-                </div>
-                <h5 class="card-title">24/7 Support</h5>
-                <p class="card-text text-muted">
-                  Our customer support team is available round the clock to help
-                  you.
-                </p>
-              </div>
-            </div>
+            <h5>Easy Shopping</h5>
+            <p class="text-muted">Browse and purchase electronics with ease. Fast checkout and secure payments.</p>
           </div>
         </div>
       </div>
-    </section>
+      
+      <!-- Fast Delivery -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm feature-card">
+          <div class="card-body">
+            <div class="icon-box mb-3">
+              <i class="fas fa-truck"></i>
+            </div>
+            <h5>Fast Delivery</h5>
+            <p class="text-muted">Free shipping on orders over $100. Track your packages in real-time.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 24/7 Support -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm feature-card">
+          <div class="card-body">
+            <div class="icon-box mb-3">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h5>24/7 Support</h5>
+            <p class="text-muted">Get help anytime with our customer support team. We're here for you.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- Enhanced Newsletter Section -->
     <section class="py-5" style="background: var(--gradient-primary)">

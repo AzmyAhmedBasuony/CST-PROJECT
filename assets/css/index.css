@@ -1,0 +1,74 @@
+/* Feature Cards */
+.feature-card {
+    border-radius: 16px;
+    transition: all 0.4s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  }
+  
+  /* Icon Box */
+  .icon-box {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px auto; /* مسافة تحت الأيقونة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  
+  .icon-box i {
+    font-size: 28px;
+  }
+  
+  /* Card Titles */
+  .feature-card h5 {
+    color: #ff7e5f; /* نفس ألوان الثيم */
+    font-weight: 600;
+  }
+  
+
+
+  /* ===== Reset Titles inside Cards ===== */
+.product-card .card-title {
+color: #000 !important; /* خلي عنوان المنتج أسود واضح */
+font-weight: bold;
+}
+
+/* ===== زرار Add to Cart ===== */
+.btn-add-cart {
+background: linear-gradient(45deg, #ff7e5f, #feb47b); /* برتقالي + أصفر */
+border: none;
+color: #ffffff;
+font-weight: bold;
+transition: all 0.4s ease;
+border-radius: 8px;
+}
+
+.btn-add-cart:hover {
+background: linear-gradient(135deg, #feb47b, #ff7e5f);
+transform: translateY(-3px) scale(1.05);
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ===== زرار View Details ===== */
+.btn-view-details {
+background: white;
+border: 1px solid #f7a761;
+color: #f7a761;
+font-weight: bold;
+transition: all 0.4s ease;
+border-radius: 8px;
+}
+
+.btn-view-details:hover {
+background: linear-gradient(45deg, #fb8a8e, #e6ac9c, #fcb5a2);
+transform: translateY(-3px) scale(1.05);
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}

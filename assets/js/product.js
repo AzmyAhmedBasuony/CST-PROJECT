@@ -44,16 +44,18 @@ function displayProductDetails() {
     container.innerHTML = `
         <div class="row">
             <!-- Breadcrumb -->
-            <div class="col-12 mb-4">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="catalog.html">Products</a></li>
-                        <li class="breadcrumb-item"><a href="catalog.html?category=${currentProduct.category}">${currentProduct.category}</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">${currentProduct.name}</li>
-                    </ol>
-                </nav>
-            </div>
+            <!-- Breadcrumb -->
+<div class="col-12 mb-4">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb custom-breadcrumb">
+      <li class="breadcrumb-item"><a href="../index.html">🏠 Home</a></li>
+      <li class="breadcrumb-item"><a href="catalog.html">📦 Products</a></li>
+      <li class="breadcrumb-item"><a href="catalog.html?category=${currentProduct.category}">📂 ${currentProduct.category}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">✨ ${currentProduct.name}</li>
+    </ol>
+  </nav>
+</div>
+
             
             <!-- Product Images -->
             <div class="col-md-6 mb-4">
@@ -74,15 +76,19 @@ function displayProductDetails() {
                     </div>
                     
                     <div class="product-price mb-4">
-                        <span class="price-main">$${currentProduct.price.toFixed(2)}</span>
-                        <span class="price-original text-muted text-decoration-line-through ms-2">$${(currentProduct.price * 1.2).toFixed(2)}</span>
-                        <span class="badge bg-danger ms-2">20% OFF</span>
-                    </div>
-                    
-                    <div class="product-description mb-4">
-                        <h6>Description</h6>
-                        <p>${currentProduct.description}</p>
-                    </div>
+    <span class="price-main fw-bold fs-3 text-success">$${currentProduct.price.toFixed(2)}</span>
+    <span class="price-original text-muted text-decoration-line-through ms-2 small">
+        $${(currentProduct.price * 1.2).toFixed(2)}
+    </span>
+    <span class="badge bg-danger ms-2">20% OFF</span>
+</div>
+
+<div class="product-description mb-4">
+    <h6 class="fw-bold mb-2">Description</h6>
+    <p class="text-muted small" style="line-height: 1.6;">
+        ${currentProduct.description}
+    </p>
+</div>
                     
                     <div class="product-details mb-4">
                         <div class="row">
@@ -114,13 +120,14 @@ function displayProductDetails() {
                         </div>
                         
                         <div class="d-grid gap-2">
-                            <button class="btn btn-primary btn-lg" onclick="addToCartFromProduct()">
-                                <i class="fas fa-shopping-cart"></i> Add to Cart
-                            </button>
-                            <button class="btn btn-outline-primary" onclick="buyNow()">
-                                <i class="fas fa-bolt"></i> Buy Now
-                            </button>
-                        </div>
+  <button class="btn btn-add-cart btn-lg" onclick="addToCartFromProduct()">
+      <i class="fas fa-shopping-cart"></i> Add to Cart
+  </button>
+  <button class="btn btn-buy-now btn-lg" onclick="buyNow()">
+      <i class="fas fa-bolt"></i> Buy Now
+  </button>
+</div>
+
                         
                         <div class="mt-3">
                             <button class="btn btn-outline-secondary btn-sm me-2" onclick="addToWishlist()">
@@ -279,13 +286,14 @@ function loadRelatedProducts() {
                     </div>
                     <div class="product-price mb-3">$${product.price.toFixed(2)}</div>
                     <div class="mt-auto">
-                        <button class="btn btn-primary btn-sm w-100 mb-2" onclick="addToCart(${product.id})">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                        <a href="product.html?id=${product.id}" class="btn btn-outline-primary btn-sm w-100">
-                            View Details
-                        </a>
-                    </div>
+    <button class="btn btn-add-cart btn-sm w-100 mb-2" onclick="addToCart(${product.id})">
+        <i class="fas fa-shopping-cart"></i> Add to Cart
+    </button>
+    <a href="product.html?id=${product.id}" class="btn btn-view-details btn-sm w-100">
+        View Details
+    </a>
+</div>
+
                 </div>
             </div>
         </div>
