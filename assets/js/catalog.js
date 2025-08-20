@@ -6,9 +6,24 @@ let productsPerPage = 12;
 let currentViewMode = 'grid';
 
 // Initialize catalog page
+window.addEventListener('load', function () {
+  const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category');
+  filteredProducts =  products.filter(product => {
+        matchesCategory = !category || product.category === category;
+        return matchesCategory;
+    });
+    
+    currentPage = 1;
+    displayProducts();
+    updateProductCount();
+    updatePagination();
+})
+
 document.addEventListener('DOMContentLoaded', function () {
     if (window.location.pathname.includes('catalog.html')) {
         initializeCatalog();
+        
     }
 });
 
@@ -29,6 +44,7 @@ function setupFilterEventListeners() {
     // Category filter
     document.querySelectorAll('input[name="category"]').forEach(radio => {
         radio.addEventListener('change', filterProducts);
+       
     });
 
     // Price filter inputs
@@ -103,7 +119,7 @@ function getUrlParameter(name) {
 function filterProducts() {
     const searchTerm = document.getElementById('search-input').value.toLowerCase();
     const selectedCategoryElement = document.querySelector('input[name="category"]:checked');
-    const selectedCategory = selectedCategoryElement ? selectedCategoryElement.value : '';
+    const selectedCategory = selectedCategoryElement ? selectedCategoryElement.value :'';
     const minPrice = parseFloat(document.getElementById('min-price').value) || 0;
     const maxPrice = parseFloat(document.getElementById('max-price').value) || Infinity;
     const selectedRatings = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
@@ -114,14 +130,14 @@ function filterProducts() {
         const matchesSearch = product.name.toLowerCase().includes(searchTerm) ||
             product.description.toLowerCase().includes(searchTerm);
 
-        const matchesCategory = !selectedCategory || product.category === selectedCategory ;//=== selectedCategory;
+         matchesCategory = !selectedCategory || product.category === selectedCategory ;//=== selectedCategory;
        
         const matchesPrice = product.price >= minPrice && product.price <= maxPrice;
 
         const matchesRating = selectedRatings.length === 0 ||
             selectedRatings.some(rating => product.rating >= rating);
 
-         
+      // const  matchhomepress = homevalue ? product.category === homevalue : true;
         
         return matchesSearch && matchesCategory && matchesPrice && matchesRating;
     });

@@ -335,7 +335,7 @@ function showNotification(message, type = 'info') {
 // Update user interface based on login status
 function updateUserInterface() {
     const userDropdown = document.getElementById('userDropdown');
-    const cartCount = document.querySelector('.cart-count');
+    const cartCount = document.querySelector('.cart-count')[0];
     
     if (currentUser && userDropdown) {
         // Update dropdown text
@@ -377,7 +377,7 @@ function getDashboardPath(page) {
 
 // Update navigation based on user role
 function updateNavigationByRole() {
-     const dropdownMenu = document.querySelector('.dropdown-menu')[0];
+     const dropdownMenu = document.querySelector('.dropdown-menu');
     if (!dropdownMenu) return;
     
     // Clear existing items
