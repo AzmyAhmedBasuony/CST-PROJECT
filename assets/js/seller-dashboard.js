@@ -44,34 +44,32 @@ function loadSellerData() {
   console.log("orders Items = ", orders);
 
   // Map orders to sellerOrders format
-  if (localStorage.getItem("sellerOrders")) {
-    sellerOrders = JSON.parse(localStorage.getItem("sellerOrders"));
-  } else {
-    sellerOrders = orders.map((order) => ({
-      id: order.id,
-      customer: order.customer.name,
-      customerEmail: order.customer.email,
-      products: order.items.map((item) => ({
-        id: item.id,
-        name: item.name,
-        quantity: item.quantity,
-        price: item.price,
-      })),
-      total: order.total,
-      date: order.createdAt
-        ? new Date(order.createdAt).toISOString().split("T")[0]
-        : new Date().toISOString().split("T")[0],
-      status: order.status,
-      shippingAddress: `${order.shipping.address}, ${
-        order.shipping.city || ""
-      }, ${order.shipping.state || ""} ${order.shipping.zipCode || ""}`.trim(),
-      createdAt: order.createdAt,
-      notes: order.notes,
-      payment: order.payment,
-      shipping: order.shipping,
-      shippingMethod: order.shippingMethod,
-    }));
-  }
+
+  sellerOrders = orders.map((order) => ({
+    id: order.id,
+    customer: order.customer.name,
+    customerEmail: order.customer.email,
+    products: order.items.map((item) => ({
+      id: item.id,
+      name: item.name,
+      quantity: item.quantity,
+      price: item.price,
+    })),
+    total: order.total,
+    date: order.createdAt
+      ? new Date(order.createdAt).toISOString().split("T")[0]
+      : new Date().toISOString().split("T")[0],
+    // status: order.status,
+    shippingAddress: `${order.shipping.address}, ${
+      order.shipping.city || ""
+    }, ${order.shipping.state || ""} ${order.shipping.zipCode || ""}`.trim(),
+    createdAt: order.createdAt,
+    notes: order.notes,
+    payment: order.payment,
+    shipping: order.shipping,
+    shippingMethod: order.shippingMethod,
+    status: order.status,
+  }));
 
   // If no orders exist, create sample orders for demo
   if (sellerOrders.length === 0) {
@@ -567,7 +565,11 @@ function updateOrderStatus() {
   if (orderIndex !== -1) {
     sellerOrders[orderIndex].status = newStatus;
     localStorage.setItem("sellerOrders", JSON.stringify(sellerOrders));
-
+    const orders = JSON.parse(localStorage.getItem("orders") || "[]");
+    console.log("orders Items = ", orders);
+    const orderItem = orders.find((o) => o.id === orderId);
+    orderItem.status = newStatus;
+    localStorage.setItem("orders", JSON.stringify(orders));
     showNotification("Order status updated successfully!", "success");
 
     // Reload data
