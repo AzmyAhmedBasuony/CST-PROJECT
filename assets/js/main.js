@@ -70,8 +70,8 @@ function initializeSampleProducts() {
   products = [
     {
       id: 1,
-      name: "iPhone 15 Pro",
-      category: "smartphones",
+      name: "Dear Address",
+      category: "clothing",
       price: 999.99,
       description: "Latest iPhone with advanced camera system and A17 Pro chip",
       image: "assets/images/iphone15.jpg",
@@ -82,8 +82,8 @@ function initializeSampleProducts() {
     },
     {
       id: 2,
-      name: 'MacBook Pro 16"',
-      category: "laptops",
+      name: "Beauty Shirt",
+      category: "clothing",
       price: 2499.99,
       description: "Powerful laptop for professionals with M3 Pro chip",
       image: "assets/images/macbook-pro.jpg",
@@ -94,8 +94,8 @@ function initializeSampleProducts() {
     },
     {
       id: 3,
-      name: "Sony WH-1000XM5",
-      category: "audio",
+      name: "Holla Skirt",
+      category: "clothing",
       price: 399.99,
       description:
         "Premium noise-cancelling headphones with exceptional sound quality",
@@ -107,8 +107,8 @@ function initializeSampleProducts() {
     },
     {
       id: 4,
-      name: "Samsung Galaxy S24",
-      category: "smartphones",
+      name: "RINGO",
+      category: "jewelry",
       price: 899.99,
       description: "Android flagship with AI features and excellent camera",
       image: "assets/images/samsung-s24.jpg",
@@ -119,8 +119,8 @@ function initializeSampleProducts() {
     },
     {
       id: 5,
-      name: "Dell XPS 13",
-      category: "laptops",
+      name: "Nocholas",
+      category: "jewelry",
       price: 1299.99,
       description: "Ultra-thin laptop with InfinityEdge display",
       image: "assets/images/dell-xps.jpg",
@@ -132,7 +132,7 @@ function initializeSampleProducts() {
     {
       id: 6,
       name: "Bose QuietComfort 45",
-      category: "audio",
+      category: "jewelry",
       price: 329.99,
       description: "Comfortable headphones with world-class noise cancellation",
       image: "assets/images/bose-headphones.jpg",
@@ -144,7 +144,7 @@ function initializeSampleProducts() {
     {
       id: 7,
       name: "Google Nest Hub",
-      category: "smart-home",
+      category: "electronics",
       price: 99.99,
       description: "Smart display with Google Assistant for your home",
       image: "assets/images/nest-hub.jpg",
@@ -156,7 +156,7 @@ function initializeSampleProducts() {
     {
       id: 8,
       name: "Amazon Echo Dot",
-      category: "smart-home",
+      category: "electronics",
       price: 49.99,
       description: "Smart speaker with Alexa voice assistant",
       image: "assets/images/echo-dot.jpg",
@@ -168,7 +168,7 @@ function initializeSampleProducts() {
     {
       id: 9,
       name: 'LG OLED C3 55"',
-      category: "televisions",
+      category: "electronics",
       price: 1799.99,
       description: "Stunning 4K OLED TV with perfect blacks and vibrant colors",
       image: "assets/images/lg-oled.jpg",
@@ -180,7 +180,7 @@ function initializeSampleProducts() {
     {
       id: 10,
       name: "ASUS ROG Strix",
-      category: "laptops",
+      category: "electronics",
       price: 1899.99,
       description: "High-performance gaming laptop with RTX 4080",
       image: "assets/images/asus-rog.jpg",
@@ -192,7 +192,7 @@ function initializeSampleProducts() {
     {
       id: 11,
       name: "JBL Charge 5",
-      category: "audio",
+      category: "electronics",
       price: 149.99,
       description: "Portable Bluetooth speaker with powerful sound",
       image: "assets/images/jbl-charge5.jpg",
@@ -204,7 +204,7 @@ function initializeSampleProducts() {
     {
       id: 12,
       name: "OnePlus 12",
-      category: "smartphones",
+      category: "electronics",
       price: 799.99,
       description: "Flagship killer with fast charging and smooth display",
       image: "assets/images/oneplus12.jpg",
@@ -216,7 +216,7 @@ function initializeSampleProducts() {
     {
       id: 13,
       name: "Lenovo Legion 5",
-      category: "laptops",
+      category: "electronics",
       price: 1299.99,
       description: "Gaming laptop with AMD Ryzen 7 and RTX 3060",
       image: "assets/images/lenovo-legion.jpg",
@@ -228,7 +228,7 @@ function initializeSampleProducts() {
     {
       id: 14,
       name: "Sony PlayStation 5",
-      category: "gaming",
+      category: "electronics",
       price: 499.99,
       description: "Next-gen console with ultra-fast SSD and 4K gaming",
       image: "assets/images/ps5.jpg",
@@ -240,7 +240,7 @@ function initializeSampleProducts() {
     {
       id: 15,
       name: "Microsoft Surface Pro 9",
-      category: "tablets",
+      category: "electronics",
       price: 1099.99,
       description:
         "2-in-1 tablet with detachable keyboard and great performance",
