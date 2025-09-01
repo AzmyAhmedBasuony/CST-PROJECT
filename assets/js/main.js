@@ -42,7 +42,7 @@ async function loadProductsFromStorage() {
       await loadProductsFromAPI();
     } catch (error) {
       console.log("API failed, using sample products:", error);
-      initializeSampleProducts();
+    //  initializeSampleProducts();
     }
   }
 }
