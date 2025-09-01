@@ -129,19 +129,17 @@
     font-weight: 600;
   }
   
-  /* ---------------- Footer Styling ---------------- */
-  .footer-custom {
-    background: linear-gradient(45deg, #2c2c2c, #1a1a1a);
-    color: #fff;
-    padding-top: 40px;
-    padding-bottom: 30px;
-  }
-  
-  .footer-title {
-    color: #feb47b;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
+
+.footer-title {
+color: #fff; 
+font-weight: bold;
+margin-bottom: 1rem;
+
+}
+footer ul li a{
+ color: #fff !important; 
+ 
+}
   
   .footer-custom ul li a {
     color: #ffffffb3;
